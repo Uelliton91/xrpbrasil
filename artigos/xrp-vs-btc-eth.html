@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XRP/XRPL vs. BTC e ETH: diferenças práticas — XRP BRASIL</title>
+    <meta name="description" content="Comparativo direto entre XRP/XRPL, Bitcoin (BTC) e Ethereum (ETH): propósito, consenso, finalização, taxas, programabilidade, energia e casos de uso." />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <nav class="nav">
+        <a href="/pages/guia.html">Guia</a>
+        <a href="/pages/xrpl.html">XRPL</a>
+        <a href="/artigos/historia-xrp-xrpl.html">História</a>
+        <a href="/artigos/index.html">Artigos</a>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>XRP/XRPL vs. BTC e ETH: diferenças práticas</h1>
+      <p>Um guia direto para entender como <strong>XRP/XRPL</strong> se compara a <strong>Bitcoin (BTC)</strong> e <strong>Ethereum (ETH)</strong> em aspectos técnicos e de uso. Conteúdo educacional — não é recomendação de investimento.</p>
+
+      <h2>Propósito e desenho</h2>
+      <ul>
+        <li><strong>XRP/XRPL</strong>: pagamentos e liquidação em tempo real; DEX e AMM <em>nativos</em>; foco em baixa latência e custo.</li>
+        <li><strong>BTC</strong>: dinheiro digital resistente à censura; segurança via <em>proof-of-work</em> (PoW); uso como reserva de valor.</li>
+        <li><strong>ETH</strong>: plataforma de contratos inteligentes (<em>smart contracts</em>) e dApps; ecossistema DeFi/NFT amplo.</li>
+      </ul>
+
+      <h2>Consenso e finalização</h2>
+      <ul>
+        <li><strong>XRPL</strong>: consenso baseado em validação e listas UNL escolhidas pelos operadores; fechamento de ledger típico em ~3–5 s com finalização prática rápida.</li>
+        <li><strong>BTC</strong>: PoW com blocos ~10 min; segurança aumenta com confirmações (comum aguardar 6 blocos para alto valor).</li>
+        <li><strong>ETH</strong>: <em>proof-of-stake</em> (PoS) com blocos ~12 s; finalização econômica em poucos minutos quando a rede finaliza épocas.</li>
+      </ul>
+
+      <h2>Custos e desempenho</h2>
+      <ul>
+        <li><strong>XRPL</strong>: taxa dinâmica geralmente muito baixa; throughput alto para pagamentos simples.</li>
+        <li><strong>BTC</strong>: taxas variam conforme demanda on-chain; prioriza segurança/imutabilidade.</li>
+        <li><strong>ETH</strong>: <em>gas</em> variável; pode ser alto em períodos de congestão, com alternativas L2.</li>
+      </ul>
+
+      <h2>Programabilidade</h2>
+      <ul>
+        <li><strong>XRPL</strong>: funções nativas (pagamentos, DEX, AMM, escrows, NFTs); não é uma VM Turing-completa na L1. Sidechains/bridges podem oferecer EVM/contratos.</li>
+        <li><strong>BTC</strong>: <em>script</em> limitado na L1; funcionalidades estendidas em camadas superiores (ex.: Lightning, sidechains).</li>
+        <li><strong>ETH</strong>: EVM e contratos inteligentes generalistas; base para DeFi/NFTs/DAOs.</li>
+      </ul>
+
+      <h2>Energia e impacto</h2>
+      <ul>
+        <li><strong>XRPL</strong>: consumo baixo por não usar mineração.</li>
+        <li><strong>BTC</strong>: PoW consome energia significativa como parte do modelo de segurança.</li>
+        <li><strong>ETH</strong>: PoS com consumo muito inferior ao PoW.</li>
+      </ul>
+
+      <h2>Economia do token</h2>
+      <ul>
+        <li><strong>XRP</strong>: suprimento fixo (100 bilhões) definido na gênese; taxas são queimadas em pequena fração.</li>
+        <li><strong>BTC</strong>: emissão programada com <em>halvings</em> até ~21 milhões.</li>
+        <li><strong>ETH</strong>: emissão e queima (EIP-1559) sob PoS; oferta líquida pode variar.</li>
+      </ul>
+
+      <h2>Casos de uso típicos</h2>
+      <ul>
+        <li><strong>XRPL</strong>: pagamentos transfronteiriços, liquidez de ponte, DEX/AMM nativos, ativos emitidos (IOUs), NFTs (XLS-20).</li>
+        <li><strong>BTC</strong>: reserva de valor, transferências on-chain, pagamentos via L2.</li>
+        <li><strong>ETH</strong>: DeFi (AMMs, lending), stablecoins ERC-20, NFTs, DAOs, jogos, L2s.</li>
+      </ul>
+
+      <h2>Referências</h2>
+      <ul>
+        <li><a href="https://xrpl.org/" target="_blank" rel="noopener">XRPL.org — Documentação</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/defi/amm/" target="_blank" rel="noopener">XRPL.org — AMM</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/tokens/nftoken/" target="_blank" rel="noopener">XRPL.org — NFTs (XLS-20)</a></li>
+        <li><a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener">Bitcoin — Whitepaper</a></li>
+        <li><a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/" target="_blank" rel="noopener">Ethereum.org — Proof of Stake</a></li>
+        <li><a href="https://ethereum.org/en/developers/docs/gas/" target="_blank" rel="noopener">Ethereum.org — Gas e taxas</a></li>
+        <li><a href="https://eips.ethereum.org/EIPS/eip-1559" target="_blank" rel="noopener">EIP-1559 — Fee market change</a></li>
+        <li><a href="https://lightning.network/" target="_blank" rel="noopener">Lightning Network</a></li>
+      </ul>
+
+      <section class="notice"><p>As redes evoluem ao longo do tempo. Verifique documentações oficiais para mudanças de protocolo e recursos. Nada aqui é conselho financeiro.</p></section>
+
+      <p>Leituras relacionadas: <a href="/artigos/ripple-xrp-xrpl.html">Ripple x XRP x XRPL</a> • <a href="/artigos/xrp-xrpl-e-ripple.html">Como XRP/XRPL se conectam à Ripple</a> • <a href="/artigos/sec-vs-ripple-xrpl.html">SEC x Ripple: o que a Justiça decidiu</a>.</p>
+    </main>
+    <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
+    <script src="/assets/script.js"></script>
+  </body>
+  </html>
+

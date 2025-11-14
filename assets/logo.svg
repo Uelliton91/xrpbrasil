@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="26" viewBox="0 0 140 26" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="140" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19c2ff"/>
+      <stop offset="1" stop-color="#0aa1db"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="8" width="24" height="10" rx="5" fill="url(#g)"/>
+  <path d="M6 13c3 0 4.5-3 7-3 2.5 0 4 3 7 3" stroke="#05141d" stroke-width="2" stroke-linecap="round"/>
+  <text x="32" y="18" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="16" fill="white">XRPBRASIL</text>
+</svg>
+

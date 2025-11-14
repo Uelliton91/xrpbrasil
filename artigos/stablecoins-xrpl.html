@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stablecoins na XRPL — XRP BRASIL</title>
+    <meta name="description" content="Visão geral das stablecoins na XRP Ledger: como funcionam (IOUs/trustlines), exemplos (USDC, RLUSD, EUR) e como verificar emissores e riscos." />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <nav class="nav">
+        <a href="/pages/guia.html">Guia</a>
+        <a href="/pages/xrpl.html">XRPL</a>
+        <a href="/artigos/historia-xrp-xrpl.html">História</a>
+        <a href="/artigos/index.html">Artigos</a>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Stablecoins na XRPL</h1>
+      <p>A XRPL suporta <strong>stablecoins</strong> como <em>ativos emitidos</em> (IOUs). Para receber um ativo, a conta abre uma <strong>trustline</strong> ao emissor. Taxas são baixas e transferências confirmam em ~3–5 s. A seguir, entenda o básico, veja exemplos públicos e como verificar emissores.</p>
+
+      <h2>Como funcionam na XRPL</h2>
+      <ul>
+        <li><strong>IOUs</strong>: o emissor cria o ativo (ex.: USD, EUR) e promete resgate conforme sua política.</li>
+        <li><strong>Trustlines</strong>: cada recebedor define limite e aceita riscos do emissor; é possível desativar <em>rippling</em>.</li>
+        <li><strong>Listas e sinalizações</strong>: emissores podem usar <em>transfer rate</em>, <em>default ripple</em> e, conforme o caso, configurações de <em>freeze</em>/<em>authorized</em>.</li>
+      </ul>
+
+      <h2>Exemplos públicos</h2>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <div class="card">
+          <span class="tag">USD</span>
+          <h3>RLUSD</h3>
+          <p>Stablecoin USD da Ripple anunciada para XRPL (e outras redes). Consulte os canais oficiais para emissor e política de lastro/relatórios.</p>
+          <p><a href="https://ripple.com/" target="_blank" rel="noopener">Ripple</a></p>
+        </div>
+        <div class="card">
+          <span class="tag">USD</span>
+          <h3>USDC (XRPL)</h3>
+          <p>Stablecoin emitida pela Circle disponível na XRPL. Verifique o emissor e o <em>ticker</em> no explorer.</p>
+          <p><a href="https://developers.circle.com/docs/usdc-on-xrp-ledger" target="_blank" rel="noopener">Docs Circle — USDC no XRPL</a> • <a href="https://xrpscan.com/tokens?q=USDC" target="_blank" rel="noopener">XRPScan — USDC</a></p>
+        </div>
+        <div class="card">
+          <span class="tag">EUR/USD</span>
+          <h3>GateHub (IOUs)</h3>
+          <p>Emissões de EUR e USD por provedores como GateHub são comuns na XRPL. Verifique emissor e condições de resgate.</p>
+          <p><a href="https://gatehub.net/" target="_blank" rel="noopener">GateHub</a></p>
+        </div>
+      </div>
+
+      <h2>Lista em expansão (verifique o emissor)</h2>
+      <p>Alguns tickers de stablecoins observados na XRPL. Sempre confirme o <strong>emissor oficial</strong> e políticas de resgate no explorer:</p>
+      <ul>
+        <li><strong>USDC</strong> — <a href="https://xrpscan.com/tokens?q=USDC" target="_blank" rel="noopener">XRPScan</a></li>
+        <li><strong>RLUSD (Ripple USD)</strong> — <a href="https://xrpscan.com/tokens?q=RLUSD" target="_blank" rel="noopener">XRPScan</a></li>
+        <li><strong>EUR (diversos emissores)</strong> — <a href="https://xrpscan.com/tokens?q=EUR" target="_blank" rel="noopener">XRPScan</a></li>
+        <li><strong>XSGD</strong> (conforme disponibilidade do emissor) — <a href="https://xrpscan.com/tokens?q=XSGD" target="_blank" rel="noopener">XRPScan</a></li>
+        <li><strong>USDB</strong> (emissões regionais) — <a href="https://xrpscan.com/tokens?q=USDB" target="_blank" rel="noopener">XRPScan</a></li>
+      </ul>
+
+      <h2>Como verificar emissores com segurança</h2>
+      <ul>
+        <li>Localize o <strong>endereço emissor</strong> no site oficial e confirme no <a href="https://xrpscan.com/" target="_blank" rel="noopener">XRPScan</a>/<a href="https://bithomp.com/explorer/" target="_blank" rel="noopener">Bithomp</a>.</li>
+        <li>Cheque <strong>política de resgate</strong>, auditorias/relatórios e limites de responsabilidade.</li>
+        <li>Ao criar a trustline, avalie <strong>rippling</strong>, limites e <strong>bandwidth</strong> de crédito.</li>
+      </ul>
+
+      <h2>Referências</h2>
+      <ul>
+        <li><a href="https://xrpl.org/docs/concepts/tokens/issued-currencies/" target="_blank" rel="noopener">XRPL.org — Issued Currencies (IOUs)</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/tokens/trust-lines/" target="_blank" rel="noopener">XRPL.org — Trust Lines</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/tokens/rippling/" target="_blank" rel="noopener">XRPL.org — Rippling</a></li>
+        <li><a href="https://xrpscan.com/tokens" target="_blank" rel="noopener">XRPScan — Tokens na XRPL</a></li>
+        <li><a href="https://developers.circle.com/docs/usdc-on-xrp-ledger" target="_blank" rel="noopener">Circle — USDC no XRPL</a></li>
+        <li><a href="https://ripple.com/" target="_blank" rel="noopener">Ripple</a></li>
+        <li><a href="https://gatehub.net/" target="_blank" rel="noopener">GateHub</a></li>
+      </ul>
+
+      <section class="notice"><p>Este conteúdo é informativo. Stablecoins envolvem riscos do emissor e de contraparte. Sempre confirme <strong>endereços oficiais</strong> e evite confiar apenas em redes sociais.</p></section>
+
+      <p>Leituras relacionadas: <a href="/pages/xrpl.html">Como funciona a XRPL</a> • <a href="/artigos/xrp-xrpl-e-ripple.html">Como XRP/XRPL se conectam à Ripple</a>.</p>
+    </main>
+    <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
+    <script src="/assets/script.js"></script>
+  </body>
+  </html>

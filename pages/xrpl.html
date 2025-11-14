@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XRPL: como funciona - XRP BRASIL</title>
+    <meta name="description" content="Entenda os conceitos principais da XRP Ledger: contas, consenso, DEX nativa, AMM, taxas, pathfinding e validadores." />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <nav class="nav">
+        <a href="/pages/guia.html">Guia</a>
+        <a href="/pages/xrpl.html">XRPL</a>
+        <a href="/artigos/historia-xrp-xrpl.html">História</a>
+        <a href="/artigos/index.html">Artigos</a>
+        <a href="/ferramentas/index.html">Ferramentas</a>
+        <a href="/glossario/index.html">Glossário</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1 id="como-funciona-a-xrpl">Como funciona a XRPL</h1>
+      <p>A XRP Ledger (XRPL) é uma rede de pagamentos pública, sem permissão e com liquidação em ~3–5 segundos. Abaixo, um resumo do que importa.</p>
+
+      <h2>Contas e chaves</h2>
+      <p>Cada conta tem um endereço (base58) e é controlada por uma ou mais chaves. A rede exige uma <em>reserva mínima</em> em XRP para evitar spam.</p>
+
+      <h2>Transações</h2>
+      <p>As transações incluem um <em>sequence</em>, <em>fee</em> e um <em>lastLedgerSequence</em>. A confirmação ocorre quando o ledger que contém a transação é validado.</p>
+
+      <h2>DEX nativa e AMM</h2>
+      <p>A XRPL possui uma bolsa descentralizada no protocolo com <em>order book</em> e um AMM nativo. Não há contratos complexos para swaps básicos.</p>
+
+      <h2>Ativos emitidos e trustlines</h2>
+      <p>Qualquer emissor pode criar um ativo IOU. Para receber um ativo, a conta abre uma <em>trustline</em> ao emissor com limite e opções de <em>rippling</em>.</p>
+
+      <h2>Pathfinding e pagamentos</h2>
+      <p>Pagamentos podem usar roteamento inteligente (pathfinding) para encontrar o melhor caminho entre pares e <em>bridges</em> com XRP/IOUs.</p>
+
+      <h2>Consenso e validadores</h2>
+      <p>Validadores independentes participam do consenso. Operadores escolhem suas UNLs (listas de validadores confiáveis). Mudanças de protocolo passam por <em>amendments</em>.</p>
+    </main>
+    <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
+    <script src="/assets/script.js"></script>
+  </body>
+  </html>
+
