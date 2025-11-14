@@ -1,6 +1,6 @@
-﻿# Netlify configuration
+# Netlify configuration
 [build]
-  publish = "/"
+  publish = "."
 
 # 404 handling for SPA-like behavior (serve 404.html)
 [[redirects]]
