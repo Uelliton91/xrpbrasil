@@ -9,3 +9,6 @@ build/
 
 # Python http.server cache
 __pycache__/
+
+# Local Netlify folder
+.netlify
