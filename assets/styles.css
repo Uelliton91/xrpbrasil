@@ -114,6 +114,7 @@ details.donate[open] .donate-details{display:block}
 .x-banner{width:100%;margin:22px 0;border:1px dashed var(--border);border-radius:14px;padding:14px;background:rgba(0,230,255,.06);text-align:center}
 .x-banner p{margin:0;color:var(--muted)}
 .x-banner strong{color:#eafcff}
+.x-banner .btn{margin-top:10px;font-size:14px}
 /* Variante mais discreta */
 .x-banner--compact{padding:10px;margin:16px 0;background:rgba(0,230,255,.04);font-size:14px;opacity:.95}
 
