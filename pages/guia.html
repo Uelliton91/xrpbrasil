@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Guia Inicial - XRP BRASIL</title>
-    <meta name="description" content="Guia inicial sobre XRP e XRPL em português: como funciona, segurança, carteiras e primeiros passos." />
+    <meta name="description" content="Guia inicial sobre XRP e XRPL em portugués: como funciona, segurança, carteiras e primeiros passos." />
     <link rel="stylesheet" href="/assets/styles.css" />
     <link rel="icon" href="/assets/favicon.svg" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6769888742388798" crossorigin="anonymous"></script>
@@ -32,23 +32,85 @@
 
     <main class="container">
       <h1>Guia inicial</h1>
-      <p>Este guia é para quem quer entender XRP e a XRPL com segurança, sem promessas de lucro.</p>
-
-      <h2 id="o-que-e-xrp">O que é XRP</h2>
-      <p>XRP é um ativo digital de utilidade para liquidação e transferência de valor. Sua emissão é fixa (100 bilhões), com parte em circulação e parte em <em>escrow</em> sob regras on-chain. O XRP é negociável e também serve como <em>reserva mínima</em> para criar contas e algumas funções da XRPL.</p>
-
-      <h2 id="seguranca">Segurança primeiro</h2>
+      <p>Este guia é para quem quer entender <strong>XRP</strong> e a <strong>XRP Ledger (XRPL)</strong> com segurança, sem promessas de lucro rápido e sem linguagem confusa. A ideia é que você consiga sair do zero até um <strong>entendimento prático</strong> da tecnologia.</p>
+      <p>Ao final desta página você vai saber:</p>
       <ul class="icon-check">
-        <li>Nunca compartilhe sua frase-semente ou chaves privadas.</li>
-        <li>Use autenticação em dois fatores nas contas que suportam.</li>
-        <li>Verifique URLs e extensões de navegador. Desconfie de promessas de brindes.</li>
-        <li>Este site é educacional e não solicita depósitos.</li>
+        <li>o que é XRP e para que ele foi projetado;</li>
+        <li>como a XRPL funciona por baixo dos panos;</li>
+        <li>como começar a estudar e testar a rede sem precisar comprar nada;</li>
+        <li>quais são os principais riscos de segurança e como evitá-los;</li>
+        <li>onde aprofundar o estudo com artigos e ferramentas em português.</li>
       </ul>
 
-      <h2>Carteiras</h2>
-      <p>Veja: <a href="/artigos/carteiras-xrp.html">Carteiras XRP: custódia e segurança</a>.</p>
+      <h2 id="o-que-e-xrp">O que é XRP</h2>
+      <p><strong>XRP</strong> é um ativo digital de utilidade usado para liquidação e transferência de valor dentro da XRPL. Diferente de moedas criadas por mineração, todo o suprimento de 100 bilhões de XRP foi definido no gênese do ledger.</p>
+      <p>Na prática, o XRP serve para:</p>
+      <ul>
+        <li>pagar taxas de transação na XRPL (sempre uma pequena fração, que é queimada);</li>
+        <li>funcionar como <strong>moeda-ponte</strong> em pagamentos entre diferentes moedas/ativos;</li>
+        <li>manter uma <strong>reserva mínima</strong> em cada conta, ajudando a combater spam e abuso da rede;</li>
+        <li>servir como ativo de liquidez em produtos que usam a XRPL para liquidação rápida.</li>
+      </ul>
+      <p>Uma parte relevante do supply está em <em>escrow</em> on-chain com regras públicas; outra parte está em circulação entre usuários, exchanges e instituições.</p>
+
+      <h2>Visão rápida da XRPL</h2>
+      <p>A XRPL é uma rede de pagamentos pública, sem permissão, que fecha um novo <em>ledger</em> a cada ~3–5 segundos. Ela foi desenhada para:</p>
+      <ul>
+        <li>ser <strong>rápida</strong> (confirmações em segundos);</li>
+        <li>ter <strong>custos muito baixos</strong> de transação;</li>
+        <li>trazer recursos nativos como <strong>DEX</strong>, <strong>AMM</strong>, <strong>escrow</strong> e <strong>NFTs</strong>;</li>
+        <li>permitir que qualquer pessoa rode um servidor e participe do ecossistema.</li>
+      </ul>
+      <p>Para uma explicação mais técnica, veja também a página <a href="/pages/xrpl.html">Como funciona a XRPL</a>.</p>
+
+      <h2>Começando na prática (sem investir de cara)</h2>
+      <p>Uma forma segura de aprender é usar a <strong>testnet</strong>, onde você recebe XRP de teste por meio de um <em>faucet</em> e pode experimentar a rede sem risco financeiro.</p>
+      <ol>
+        <li>Acesse a seção de <strong>testnets</strong> em <a href="https://xrpl.org/xrp-test-networks.html" target="_blank" rel="noopener">xrpl.org</a> e gere uma conta de teste.</li>
+        <li>Copie o endereço e consulte no <a href="https://xrpscan.com/" target="_blank" rel="noopener">XRPScan</a> para ver o saldo e as transações.</li>
+        <li>Use as ferramentas de <strong>dev tools</strong> para enviar uma transação simples (ex.: pagamento para outra conta de teste).</li>
+        <li>Se você programa, experimente as bibliotecas <a href="https://github.com/XRPLF/xrpl.js" target="_blank" rel="noopener">xrpl.js</a> ou <a href="https://github.com/XRPLF/xrpl-py" target="_blank" rel="noopener">xrpl-py</a>.</li>
+      </ol>
+      <p>Um passo a passo mais detalhado está em <a href="/artigos/introducao-xrpl.html">Introdução prática à XRPL</a>.</p>
+
+      <h2 id="seguranca">Segurança primeiro</h2>
+      <p>Antes de pensar em valores reais, é essencial entender alguns princípios:</p>
+      <ul class="icon-check">
+        <li><strong>Nunca</strong> compartilhe sua frase-semente ou chaves privadas, nem prints ou fotos dela.</li>
+        <li>Use autenticação em dois fatores (2FA) nas exchanges, carteiras e e-mails que suportarem.</li>
+        <li>Verifique sempre o <strong>domínio</strong> (URL) e extensões de navegador. Golpes costumam usar sites muito parecidos com os originais.</li>
+        <li>Desconfie de <strong>airdrops milagrosos</strong>, sorteios que pedem envio de fundos antes ou promessas de rendimento garantido.</li>
+        <li>Este site é educacional: não solicita depósitos, não faz captação de recursos e não envia mensagens privadas pedindo dinheiro.</li>
+      </ul>
+      <p>Para um mergulho mais profundo em boas práticas de proteção, leia o artigo <a href="/artigos/carteiras-xrp.html">Carteiras XRP: custódia e segurança</a>.</p>
+
+      <h2>Carteiras: onde o XRP fica guardado</h2>
+      <p>Uma <strong>carteira</strong> (wallet) é o software ou dispositivo que gerencia suas chaves privadas. Em XRP, a chave controla a conta na XRPL; quem tem a chave, controla o saldo.</p>
+      <ul>
+        <li><strong>Custódia própria (self-custody)</strong>: você guarda as chaves (ex.: hardware wallet, carteira mobile não-custodial). Maior responsabilidade, mais controle.</li>
+        <li><strong>Custódia de terceiros</strong>: uma empresa guarda as chaves por você (ex.: exchanges, custodians). Mais conveniência, mas exige confiança na instituição.</li>
+      </ul>
+      <p>O caminho que recomendamos para iniciantes é:</p>
+      <ol>
+        <li>Aprender na testnet, sem dinheiro real.</li>
+        <li>Quando se sentir seguro, estudar bem as opções de custódia.</li>
+        <li>Somente então avaliar se faz sentido usar hardware wallet ou outras soluções, sempre entendendo os riscos envolvidos.</li>
+      </ol>
+      <p>Veja o guia completo em <a href="/artigos/carteiras-xrp.html">Carteiras XRP: custódia e segurança</a>.</p>
+
+      <h2>Perguntas rápidas</h2>
+      <ul>
+        <li><strong>Preciso comprar XRP para estudar?</strong> Não. Use a testnet e materiais educacionais antes de considerar qualquer investimento.</li>
+        <li><strong>Este conteúdo é recomendação de investimento?</strong> Não. O foco aqui é tecnologia e infraestrutura de pagamentos, não alvos de preço.</li>
+        <li><strong>Posso perder tudo?</strong> Sim. Criptoativos envolvem risco elevado de preço, risco técnico e risco operacional. Nunca invista o que não pode perder.</li>
+      </ul>
+
+      <section class="notice">
+        <p>Este guia é informativo e não substitui pesquisa própria, assessoria financeira ou jurídica. Use-o como ponto de partida para estudar XRP/XRPL de forma mais estruturada.</p>
+      </section>
     </main>
     <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
     <script src="/assets/script.js"></script>
   </body>
   </html>
+

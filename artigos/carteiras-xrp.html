@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Carteiras XRP: custódia e segurança - XRP BRASIL</title>
-    <meta name="description" content="Noções de custódia, frase-semente, hardware wallets e boas práticas de segurança para XRP." />
+    <meta name="description" content="Diferenças entre custódia própria e de terceiros, tipos de carteira (mobile, hardware, web), frase-semente, multassinatura e boas práticas de segurança para XRP." />
     <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6769888742388798" crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTPCXTQRF"></script>
@@ -26,47 +27,93 @@
     </header>
     <main class="container">
       <h1>Carteiras XRP: custódia e segurança</h1>
-      <p>Entenda a diferença entre custódia própria e de terceiros e como proteger seus fundos.</p>
+      <p>Escolher onde guardar seu <strong>XRP</strong> é tão importante quanto entender a tecnologia. Esta página explica as diferenças entre <strong>custódia própria</strong> e <strong>custódia de terceiros</strong>, tipos de carteira e um conjunto de <strong>boas práticas de segurança</strong> específicas para a XRPL.</p>
 
-      <h2>Custódia: própria vs. de terceiros</h2>
-      <h3>Custódia própria (self-custody)</h3>
+      <h2>1. Custódia: própria vs. de terceiros</h2>
+      <h3>Custódia própria (self‑custody)</h3>
       <ul>
-        <li>Você controla as chaves privadas (frase-semente). Ninguém pode mover fundos sem elas.</li>
-        <li>Responsabilidade total por backups e segurança. Se perder a seed, perde o acesso.</li>
-        <li>Recomendada para poupança de longo prazo e valores maiores.</li>
-        <li>Boas práticas: hardware wallet, backup offline da seed, uso de multassinatura quando fizer sentido.</li>
+        <li>Você controla as chaves privadas (frase‑semente). Ninguém pode mover fundos sem elas.</li>
+        <li>A responsabilidade por <strong>backup</strong> e <strong>segurança</strong> é 100% sua. Se perder a seed, perde o acesso.</li>
+        <li>Geralmente é a melhor opção para <strong>poupança de longo prazo</strong> e valores mais altos.</li>
+        <li>Boas práticas: hardware wallet, backups offline, uso de multassinatura em cenários que justificam.</li>
       </ul>
+
       <h3>Custódia de terceiros (custodial)</h3>
       <ul>
-        <li>Um provedor guarda as chaves por você; acesso via conta (login/2FA).</li>
-        <li>Conveniência e recuperação de conta, porém existe risco de contraparte/regulatório.</li>
-        <li>Útil para iniciantes, valores menores e uso frequente.</li>
-        <li>Boas práticas: escolher empresas reguladas/confiáveis, ativar 2FA, não manter grandes saldos por longos períodos.</li>
-      </ul>
-      <h3>Regra prática</h3>
-      <ul>
-        <li>Guarde a maior parte em custódia própria e mantenha em custodial apenas o necessário para uso diário.</li>
-        <li>Diversifique: combine hardware wallet + carteira mobile e, se necessário, multassinatura.</li>
+        <li>Um provedor (exchange, banco, fintech) guarda as chaves por você; o acesso ocorre via login/senha e 2FA.</li>
+        <li>Mais conveniente para <strong>uso frequente</strong>, mas adiciona risco de contraparte/regulatório.</li>
+        <li>Útil para iniciantes e valores menores ou rotineiros.</li>
+        <li>Boas práticas: escolher empresas reguladas/confiáveis, ativar 2FA, evitar manter grandes saldos parados.</li>
       </ul>
 
-      <h2>Conceitos</h2>
+      <h3>Regra prática</h3>
+      <p>Uma abordagem comum é:</p>
       <ul>
-        <li><strong>Frase-semente</strong>: representa a chave privada. Guarde offline.</li>
-        <li><strong>Multassinatura</strong>: aumenta segurança exigindo múltiplas chaves.</li>
-        <li><strong>Hardware wallet</strong>: reduz risco de malware em transações.</li>
+        <li>manter a maior parte em <strong>custódia própria</strong>, com foco em segurança;</li>
+        <li>deixar em custódia de terceiros apenas o necessário para uso no dia a dia (trading, pagamentos frequentes).</li>
+      </ul>
+
+      <h2>2. Tipos de carteira</h2>
+      <h3>Carteiras mobile/desktop (não‑custodiais)</h3>
+      <ul>
+        <li>Aplicativos que armazenam a chave privada localmente (geralmente criptografada).</li>
+        <li>Oferecem boa usabilidade para pagamentos, DEX/AMM e gestão de múltiplos ativos.</li>
+        <li>Riscos: malware no dispositivo, phishing, perda do aparelho sem backup da seed.</li>
+      </ul>
+
+      <h3>Hardware wallets</h3>
+      <ul>
+        <li>Dispositivos físicos que guardam a chave privada isolada do computador/celular.</li>
+        <li>A assinatura de transações ocorre dentro do dispositivo; a chave nunca “sai”.</li>
+        <li>Indicado para <strong>valores relevantes</strong> e horizonte de longo prazo.</li>
+      </ul>
+
+      <h3>Carteiras web/custodiais</h3>
+      <ul>
+        <li>Você acessa via navegador ou app, mas a chave é mantida pela empresa.</li>
+        <li>Útil para quem prioriza conveniência e não quer lidar com seed.</li>
+        <li>Exige confiança total na política de segurança, compliance e segregação de ativos do provedor.</li>
+      </ul>
+
+      <h2>3. Conceitos essenciais na XRPL</h2>
+      <ul>
+        <li><strong>Frase‑semente</strong>: representa a chave privada. Deve ser anotada em meio físico e guardada em local seguro (idealmente mais de um, geograficamente separados).</li>
+        <li><strong>Multassinatura</strong>: permite configurar uma conta para exigir múltiplas assinaturas (por exemplo, 2 de 3) para movimentar fundos.</li>
+        <li><strong>Regular key</strong>: chave “do dia a dia” que pode ser trocada sem precisar mudar de conta on‑ledger, reduzindo exposição da chave mestre.</li>
+        <li><strong>Reserva mínima</strong>: parte do XRP fica “travada” para manter a conta ativa; não é bug, é proteção contra spam.</li>
+      </ul>
+
+      <h2>4. Checklist de segurança para XRP</h2>
+      <ul class="icon-check">
+        <li>Baixe carteiras apenas de <strong>fontes oficiais</strong> (site do projeto ou app store verificada).</li>
+        <li>Ative 2FA em exchanges e emails associados à sua vida cripto.</li>
+        <li>Nunca digite sua seed em sites; carteiras sérias não pedem seed via formulário web.</li>
+        <li>Desconfie de “suporte” que entra em contato pedindo dados sensíveis.</li>
+        <li>Verifique sempre a <strong>URL</strong> e o certificado HTTPS antes de conectar a uma carteira web.</li>
+        <li>Para grandes valores, considere usar hardware wallet + conta com multassinatura.</li>
+      </ul>
+
+      <h2>5. Quando faz sentido migrar para self‑custody?</h2>
+      <p>Alguns sinais de que é hora de dar o próximo passo:</p>
+      <ul>
+        <li>Você já entende o básico de seed, chaves e diferença entre custodial/não‑custodial.</li>
+        <li>Seus planos envolvem <strong>segurar XRP por anos</strong>, não apenas tradar no curto prazo.</li>
+        <li>O valor em jogo é relevante o suficiente para justificar tempo de estudo e o custo de uma hardware wallet.</li>
       </ul>
 
       <h2>Referências</h2>
       <ul>
         <li><a href="https://xrpl.org/docs/concepts/accounts/cryptographic-keys/" target="_blank" rel="noopener">XRPL.org - Chaves criptográficas</a></li>
-        <li><a href="https://xrpl.org/docs/concepts/accounts/multi-signing/" target="_blank" rel="noopener">XRPL.org - Multi-signing</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/accounts/multi-signing/" target="_blank" rel="noopener">XRPL.org - Multi‑signing</a></li>
         <li><a href="https://xrpl.org/docs/concepts/accounts/" target="_blank" rel="noopener">XRPL.org - Contas</a></li>
         <li><a href="https://support.ledger.com/" target="_blank" rel="noopener">Ledger - Suporte</a></li>
         <li><a href="https://trezor.io/learn" target="_blank" rel="noopener">Trezor - Learn</a></li>
       </ul>
-      <section class="notice"><p>Links de parceiros podem gerar comissão para manter o projeto. Sempre compare opções e faça seu próprio julgamento.</p></section>
+
+      <section class="notice"><p>Links de parceiros podem gerar comissão para ajudar a manter o projeto. Compare sempre opções e tome suas decisões com base em múltiplas fontes. Nada aqui é recomendação de investimento.</p></section>
     </main>
     <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
     <script src="/assets/script.js"></script>
   </body>
   </html>
+

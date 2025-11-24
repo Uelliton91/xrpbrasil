@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AMM e DEX nativa — XRP BRASIL</title>
-    <meta name="description" content="Como funcionam a DEX nativa e o AMM na XRPL: order book, pools, LP tokens e riscos." />
+    <title>AMM e DEX nativa - XRP BRASIL</title>
+    <meta name="description" content="Como funcionam a DEX nativa e o AMM na XRPL: order book, pools, LP tokens, riscos e exemplos práticos." />
     <link rel="stylesheet" href="/assets/styles.css" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6769888742388798" crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
@@ -26,19 +26,58 @@
     </header>
     <main class="container">
       <h1>AMM e DEX nativa na XRPL</h1>
-      <p>A XRPL possui uma DEX on‑ledger desde os primórdios e um AMM nativo projetado para integração direta ao protocolo.</p>
-      <h2>Order book</h2>
-      <p>Ordens de compra e venda são objetos on‑chain com pares de ativos (XRP e/ou emitidos). A correspondência ocorre no fechamento do ledger.</p>
-      <h2>AMM</h2>
-      <p>Pools de liquidez permitem swaps diretos. Fornecedores de liquidez recebem LP tokens e taxas. Há risco de perda impermanente.</p>
+      <p>A XRPL possui uma DEX on-ledger desde os primórdios e, mais recentemente, um <strong>AMM nativo</strong> projetado para integração direta ao protocolo. Em vez de depender de contratos inteligentes complexos, a lógica de negociação e liquidez fica embutida nas regras do ledger.</p>
+
+      <h2>1. DEX de order book</h2>
+      <p>Na DEX nativa, cada par de ativos (por exemplo, <code>XRP/USD</code>, <code>USD/EUR</code>, <code>XRP/USDC</code>) possui um <strong>livro de ofertas</strong> (order book) próprio, armazenado no ledger.</p>
+      <ul>
+        <li>Ordens de compra e venda são objetos on-chain com preço, quantidade e flags (como <em>fill or kill</em> ou <em>immediate or cancel</em>).</li>
+        <li>A correspondência ocorre no fechamento de cada ledger, quando o consenso valida o conjunto de transações.</li>
+        <li>Ordens podem consumir liquidez parcial e gerar <strong>ofertas remanescentes</strong> se não forem totalmente preenchidas.</li>
+      </ul>
+      <p>Como os livros estão no próprio protocolo, qualquer carteira ou aplicação pode ler e negociar sem depender de APIs proprietárias.</p>
+
+      <h3>Auto-bridging com XRP</h3>
+      <p>Um recurso importante da DEX é o <strong>auto-bridging</strong>: a rede consegue compor caminhos de negociação usando XRP como moeda-ponte. Por exemplo:</p>
+      <ul>
+        <li>você quer trocar <em>BRL-issuer-A</em> por <em>USD-issuer-B</em>;</li>
+        <li>o ledger pode combinar BRL/XRP e XRP/USD, mesmo que não exista um livro BRL/USD direto;</li>
+        <li>isso amplia a liquidez e reduz a necessidade de pares para cada combinação de moedas.</li>
+      </ul>
+
+      <h2>2. AMM nativo</h2>
+      <p>Além da DEX, a XRPL ganhou um <strong>Automated Market Maker</strong> (AMM) integrado à camada de protocolo. A ideia é semelhante a AMMs populares de outras redes, mas com regras definidas diretamente no código do ledger.</p>
+      <ul>
+        <li>Cada pool é um par de ativos (ex.: <code>XRP/USDC</code>) com curva de preço automática.</li>
+        <li>Fornecedores de liquidez (LPs) depositam os dois ativos e recebem <strong>LP tokens</strong> que representam sua participação.</li>
+        <li>Taxas de negociação ficam dentro do pool e são distribuídas aos LPs.</li>
+        <li>O AMM pode ser usado em conjunto com a DEX (ordens podem atravessar livros + pools).</li>
+      </ul>
+
+      <h3>Riscos: perda impermanente e liquidez rasa</h3>
+      <p>Como em outros AMMs, existem riscos importantes:</p>
+      <ul>
+        <li><strong>Perda impermanente</strong>: se o preço relativo dos ativos do pool se mover muito, o LP pode terminar com menos valor do que teria simplesmente segurando os ativos fora do pool.</li>
+        <li><strong>Liquidez limitada</strong>: em pares novos ou com pouco volume, grandes ordens podem causar deslizamento (slippage) elevado.</li>
+        <li><strong>Risco de integrações externas</strong>: carteiras e interfaces que se conectam ao AMM precisam ser bem auditadas.</li>
+      </ul>
+
+      <h2>3. Exemplos práticos de uso</h2>
+      <ul>
+        <li><strong>Usuário final</strong>: fazer swap entre duas moedas (ex.: XRP &lt;-&gt; stablecoin) direto na carteira, aproveitando livros e pools.</li>
+        <li><strong>Arbitradores</strong>: explorar diferenças de preço entre a XRPL e outras bolsas, ajudando a manter mercados alinhados.</li>
+        <li><strong>Emissores de ativos</strong>: criar pares com stablecoins ou tokens próprios para oferecer liquidez aos usuários.</li>
+      </ul>
+
       <h2>Referências</h2>
       <ul>
-        <li><a href="https://xrpl.org/docs/concepts/tokens/decentralized-exchange/" target="_blank" rel="noopener">XRPL.org — DEX nativa</a></li>
-        <li><a href="https://xrpl.org/docs/concepts/defi/amm/" target="_blank" rel="noopener">XRPL.org — AMM</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/tokens/decentralized-exchange/" target="_blank" rel="noopener">XRPL.org - DEX nativa</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/defi/amm/" target="_blank" rel="noopener">XRPL.org - AMM</a></li>
       </ul>
-      <section class="notice"><p>Riscos: smart order routing, volatilidade, baixa liquidez em pares novos e possíveis bugs. Estude antes de usar valores relevantes.</p></section>
+      <section class="notice"><p>Riscos: roteamento de ordens, volatilidade, baixa liquidez em pares novos e possíveis bugs. Estude antes de usar valores relevantes.</p></section>
     </main>
     <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
     <script src="/assets/script.js"></script>
   </body>
   </html>
+

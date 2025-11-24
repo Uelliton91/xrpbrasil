@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Introdução prática à XRPL — XRP BRASIL</title>
-    <meta name="description" content="Primeiros passos com a XRPL: contas, transações e ferramentas para explorar." />
+    <title>Introdução prática à XRPL – XRP BRASIL</title>
+    <meta name="description" content="Primeiros passos práticos na XRPL: criar conta na testnet, explorar no XRPScan e enviar uma transação simples com ferramentas web ou código." />
     <link rel="stylesheet" href="/assets/styles.css" />
     <link rel="icon" href="/assets/favicon.svg" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6769888742388798" crossorigin="anonymous"></script>
@@ -29,28 +29,98 @@
     </header>
     <main class="container">
       <h1>Introdução prática à XRPL</h1>
-      <p>Neste artigo você entenderá como criar uma conta, enviar sua primeira transação na testnet e explorar no XRPScan. É um guia de <strong>aprendizado</strong> e não envolve compra de ativos.</p>
+      <p>Neste artigo você vai, passo a passo, <strong>criar uma conta na testnet</strong>, <strong>ver o saldo em um explorer</strong> e <strong>enviar sua primeira transação</strong> usando ferramentas oficiais. É tudo com XRP de teste: não há risco financeiro.</p>
 
       <h2>1) Criar uma conta na testnet</h2>
-      <p>Acesse a página de <a href="https://xrpl.org/" target="_blank" rel="noopener">documentação da XRPL</a> e utilize o <em>faucet</em> da testnet para gerar uma conta temporária (endereço e chave).</p>
+      <p>A forma mais simples é usar o <strong>faucet</strong> oficial:</p>
+      <ol>
+        <li>Acesse a página de <a href="https://xrpl.org/xrp-test-networks.html" target="_blank" rel="noopener">testnets da XRPL</a>.</li>
+        <li>Escolha a <strong>Testnet</strong> e clique no link do faucet.</li>
+        <li>Gere uma nova conta: você verá um endereço (começa com <code>r...</code>) e as chaves correspondentes.</li>
+        <li>Guarde essas informações em local seguro (mesmo sendo teste, é bom acostumar com boas práticas).</li>
+      </ol>
+      <p>Ao final, você terá uma conta de teste com XRP “de mentira”, que só existe nessa rede de experimentação.</p>
 
-      <h2>2) Explorar no explorador</h2>
-      <p>Cole seu endereço no <a href="https://xrpscan.com/" target="_blank" rel="noopener">XRPScan</a> para ver saldos e transações. Você também pode explorar transações populares e contas conhecidas.</p>
+      <h2>2) Ver sua conta no explorer</h2>
+      <p>Com o endereço em mãos:</p>
+      <ol>
+        <li>Acesse o <a href="https://xrpscan.com/" target="_blank" rel="noopener">XRPScan</a>.</li>
+        <li>No canto superior, selecione a <strong>Testnet</strong> (se estiver disponível) ou use o link direto para a rede de testes informado na documentação.</li>
+        <li>Cole o endereço da sua conta e pressione Enter.</li>
+      </ol>
+      <p>Você deve ver o saldo inicial enviado pelo faucet, além de uma ou mais transações já registradas (como a criação da conta).</p>
 
-      <h2>3) Enviar uma transação</h2>
-      <p>Use as ferramentas do site oficial ou SDKs (JavaScript, Python) para assinar e enviar uma transação simples na testnet.</p>
+      <h2>3) Enviar uma transação simples (sem programar)</h2>
+      <p>Se você não programa, ainda assim pode testar transações usando as <strong>ferramentas web</strong> da XRPL:</p>
+      <ol>
+        <li>Na documentação, abra a seção de <a href="https://xrpl.org/dev-tools.html" target="_blank" rel="noopener">Dev Tools</a>.</li>
+        <li>Use o <em>Transaction Builder</em> ou ferramentas semelhantes selecionando a <strong>Testnet</strong>.</li>
+        <li>Monte uma transação de pagamento simples para outro endereço de teste (pode ser uma segunda conta que você gerar no faucet).</li>
+        <li>Assine a transação com a chave da conta de origem.</li>
+        <li>Envie e acompanhe o resultado no próprio painel e depois no explorer.</li>
+      </ol>
+
+      <h2>4) Enviar uma transação via código (exemplo com JavaScript)</h2>
+      <p>Se você tem experiência básica com Node.js, pode usar a biblioteca <code>xrpl.js</code>. O exemplo abaixo mostra, de forma simplificada, como estruturar um script para enviar XRP de teste:</p>
+      <pre><code>// Exemplo simplificado de envio na testnet (estrutura geral)
+// 1) Configure Node.js e instale: npm install xrpl
+// 2) Preencha com sua seed de TESTNET (nunca use seed real aqui)
+
+const xrpl = require("xrpl")
+
+async function main() {
+  const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233")
+  await client.connect()
+
+  const wallet = xrpl.Wallet.fromSeed("SUA_SEED_DE_TESTNET_AQUI")
+  console.log("Conta:", wallet.address)
+
+  const tx = {
+    TransactionType: "Payment",
+    Account: wallet.address,
+    Destination: "rDESTINO_DE_TESTNET...",
+    Amount: xrpl.xrpToDrops("10") // 10 XRP de teste
+  }
+
+  const filled = await client.autofill(tx)
+  const signed = wallet.sign(filled)
+  const result = await client.submitAndWait(signed.tx_blob)
+  console.log("Resultado:", result.result.meta.TransactionResult)
+
+  await client.disconnect()
+}
+
+main()</code></pre>
+      <p>Esse código não deve ser usado em produção; ele existe apenas para ilustrar a sequência:</p>
+      <ol>
+        <li>conectar a um <strong>endpoint WebSocket</strong> da testnet;</li>
+        <li>carregar uma carteira a partir de uma seed de teste;</li>
+        <li>montar uma transação do tipo <code>Payment</code>;</li>
+        <li>preencher automaticamente campos como fee e sequência (<code>autofill</code>);</li>
+        <li>assinar, enviar e aguardar a confirmação.</li>
+      </ol>
+
+      <h2>5) Próximos passos</h2>
+      <ul>
+        <li>Explorar outras transações, como <code>OfferCreate</code> (ordens na DEX) e <code>TrustSet</code> (trustlines).</li>
+        <li>Testar o AMM na testnet usando ferramentas comunitárias.</li>
+        <li>Ler a página <a href="/pages/xrpl.html">XRPL: como funciona</a> para entender melhor os conceitos.</li>
+      </ul>
 
       <h2>Referências</h2>
       <ul>
-        <li><a href="https://xrpl.org/" target="_blank" rel="noopener">XRPL.org — Documentação oficial</a></li>
-        <li><a href="https://xrpscan.com/" target="_blank" rel="noopener">XRPScan — Explorador da XRPL</a></li>
+        <li><a href="https://xrpl.org/" target="_blank" rel="noopener">XRPL.org – Documentação oficial</a></li>
+        <li><a href="https://xrpl.org/xrp-test-networks.html" target="_blank" rel="noopener">XRPL.org – Testnets e faucet</a></li>
+        <li><a href="https://xrpl.org/dev-tools.html" target="_blank" rel="noopener">XRPL.org – Dev Tools</a></li>
+        <li><a href="https://xrpscan.com/" target="_blank" rel="noopener">XRPScan – Explorador da XRPL</a></li>
         <li><a href="https://github.com/XRPLF/xrpl.js" target="_blank" rel="noopener">xrpl.js (SDK JavaScript)</a></li>
         <li><a href="https://github.com/XRPLF/xrpl-py" target="_blank" rel="noopener">xrpl-py (SDK Python)</a></li>
       </ul>
 
-      <section class="notice"><p>Este conteúdo é educacional e não constitui recomendação de investimento.</p></section>
+      <section class="notice"><p>Este conteúdo é educacional e não constitui recomendação de investimento. Use sempre a testnet para aprender antes de operar com valores reais.</p></section>
     </main>
     <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
     <script src="/assets/script.js"></script>
   </body>
   </html>
+

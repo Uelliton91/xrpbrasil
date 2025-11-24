@@ -32,27 +32,78 @@
 
     <main class="container">
       <h1 id="como-funciona-a-xrpl">Como funciona a XRPL</h1>
-      <p>A XRP Ledger (XRPL) é uma rede de pagamentos pública, sem permissão e com liquidação em ~3–5 segundos. Abaixo, um resumo do que importa.</p>
+      <p>A XRP Ledger (XRPL) é uma rede de pagamentos pública, sem permissão e com liquidação em ~3–5 segundos. Ela foi desenhada para ser um <strong>livro-razão global de pagamentos</strong>, com recursos nativos de câmbio, emissão de ativos, AMM e NFTs.</p>
+      <p>Esta página é um mapa mental: não substitui a documentação oficial, mas ajuda a entender as peças principais antes de mergulhar no código.</p>
 
       <h2>Contas e chaves</h2>
-      <p>Cada conta tem um endereço (base58) e é controlada por uma ou mais chaves. A rede exige uma <em>reserva mínima</em> em XRP para evitar spam.</p>
+      <p>Cada conta na XRPL tem um <strong>endereço</strong> (começa com <code>r...</code>) e é controlada por uma ou mais <strong>chaves criptográficas</strong>. A conta precisa manter uma <strong>reserva mínima</strong> em XRP para existir, o que ajuda a evitar spam.</p>
+      <ul>
+        <li><strong>Chave mestre</strong>: pode assinar qualquer transação; pode ser desativada em favor de outra chave.</li>
+        <li><strong>Regular key</strong>: chave alternativa para uso diário, reduzindo o uso da chave mestre.</li>
+        <li><strong>Multassinatura</strong>: permite exigir assinaturas múltiplas para uma transação ser válida (ex.: 2 de 3).</li>
+      </ul>
 
       <h2>Transações</h2>
-      <p>As transações incluem um <em>sequence</em>, <em>fee</em> e um <em>lastLedgerSequence</em>. A confirmação ocorre quando o ledger que contém a transação é validado.</p>
+      <p>Transações são objetos estruturados enviados para a rede. Alguns campos importantes:</p>
+      <ul>
+        <li><strong>Sequence</strong>: contador da conta; cada transação consome um número sequencial.</li>
+        <li><strong>Fee</strong>: taxa em XRP, geralmente muito baixa, que é queimada.</li>
+        <li><strong>LastLedgerSequence</strong>: último ledger em que a transação pode ser incluída antes de expirar.</li>
+      </ul>
+      <p>Uma transação é considerada confirmada quando o ledger em que ela aparece é <strong>validado</strong> pelo consenso.</p>
 
       <h2>DEX nativa e AMM</h2>
-      <p>A XRPL possui uma bolsa descentralizada no protocolo com <em>order book</em> e um AMM nativo. Não há contratos complexos para swaps básicos.</p>
+      <p>A XRPL possui uma <strong>DEX on-ledger</strong> desde 2012, baseada em <em>order books</em> para cada par de ativos. Ordens são objetos no próprio ledger, e a correspondência ocorre no fechamento de cada ledger.</p>
+      <p>Além disso, há um <strong>AMM nativo</strong> integrado ao protocolo. Em vez de contratos inteligentes complexos, o AMM segue regras padronizadas no código da XRPL, permitindo:</p>
+      <ul>
+        <li>criar pools de liquidez com pares de ativos;</li>
+        <li>emitir LP tokens para quem provê liquidez;</li>
+        <li>distribuir taxas proporcionalmente aos LPs;</li>
+        <li>integrar swaps com a DEX tradicional.</li>
+      </ul>
 
       <h2>Ativos emitidos e trustlines</h2>
-      <p>Qualquer emissor pode criar um ativo IOU. Para receber um ativo, a conta abre uma <em>trustline</em> ao emissor com limite e opções de <em>rippling</em>.</p>
+      <p>Além do XRP (ativo nativo), a XRPL permite que <strong>emissores criem ativos representando moedas tradicionais, stablecoins, créditos ou RWAs</strong>. Esses ativos são chamados de <strong>Issued Currencies</strong> ou <strong>IOUs</strong>.</p>
+      <ul>
+        <li><strong>Emissor</strong>: conta que cria o ativo (ex.: USD, EUR, RLUSD).</li>
+        <li><strong>Trustline</strong>: relação de confiança entre o recebedor e o emissor, com limite e configurações de <em>rippling</em>.</li>
+        <li><strong>Rippling</strong>: recurso que permite que saldos de IOUs fluam entre contas ligadas; pode ser desativado para evitar comportamentos indesejados.</li>
+      </ul>
+      <p>Na prática, você só recebe um IOU se tiver uma trustline para o emissor, o que reforça a ideia de que confiança é local e configurável.</p>
 
       <h2>Pathfinding e pagamentos</h2>
-      <p>Pagamentos podem usar roteamento inteligente (pathfinding) para encontrar o melhor caminho entre pares e <em>bridges</em> com XRP/IOUs.</p>
+      <p>O mecanismo de <strong>pathfinding</strong> permite que a rede descubra <strong>caminhos de liquidez</strong> entre dois pontos, combinando:</p>
+      <ul>
+        <li>pools de AMM;</li>
+        <li>ordens da DEX;</li>
+        <li>IOUs de diferentes emissores;</li>
+        <li>o próprio XRP como moeda-ponte.</li>
+      </ul>
+      <p>Assim, um pagamento pode começar em <em>BRL de um emissor</em> e terminar em <em>USD de outro emissor</em>, usando automaticamente o melhor caminho disponível no ledger.</p>
 
       <h2>Consenso e validadores</h2>
-      <p>Validadores independentes participam do consenso. Operadores escolhem suas UNLs (listas de validadores confiáveis). Mudanças de protocolo passam por <em>amendments</em>.</p>
+      <p>A XRPL usa um mecanismo de consenso próprio, baseado em <strong>validadores independentes</strong>. Cada operador de servidor escolhe sua <strong>Unique Node List (UNL)</strong>, que é a lista de validadores em quem confia para participar do consenso.</p>
+      <ul>
+        <li>Validadores propõem conjuntos de transações para o próximo ledger.</li>
+        <li>Quando 80% ou mais da UNL concorda em uma proposta, o ledger é considerado validado.</li>
+        <li>Mudanças de protocolo passam pelo mecanismo de <strong>amendments</strong>, onde validadores votam ao longo do tempo.</li>
+      </ul>
+      <p>Essa arquitetura busca equilibrar <strong>descentralização</strong>, <strong>desempenho</strong> e <strong>segurança</strong>, permitindo finalização rápida sem mineração.</p>
+
+      <h2>Por onde continuar estudando</h2>
+      <ul>
+        <li>Artigo prático: <a href="/artigos/introducao-xrpl.html">Introdução prática à XRPL</a>.</li>
+        <li>DeFi na XRPL: <a href="/artigos/amm-dex-xrpl.html">AMM e DEX nativa: como funcionam</a>.</li>
+        <li>Tokens e stablecoins: <a href="/artigos/stablecoins-xrpl.html">Stablecoins na XRPL</a>.</li>
+        <li>História da rede: <a href="/artigos/historia-xrp-xrpl.html">História do XRP/XRPL</a>.</li>
+      </ul>
+
+      <section class="notice">
+        <p>Este texto simplifica diversos detalhes técnicos. Para especificações completas e exemplos de código, consulte a documentação oficial em <a href="https://xrpl.org/" target="_blank" rel="noopener">xrpl.org</a>.</p>
+      </section>
     </main>
     <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
     <script src="/assets/script.js"></script>
   </body>
   </html>
+

@@ -28,15 +28,36 @@
     </header>
     <main class="container">
       <h1>Glossário</h1>
+      <p>Um glossário em expansão com termos básicos do universo de <strong>XRP</strong> e da <strong>XRP Ledger (XRPL)</strong>. Use como referência rápida e, quando quiser se aprofundar, siga os links para artigos relacionados.</p>
       <ul>
-        <li><strong>Ledger</strong>: livro-razão com o estado da rede.</li>
-        <li><strong>UNL</strong>: lista de validadores confiáveis usada por um servidor.</li>
-        <li><strong>Trustline</strong>: relação de confiança para ativos emitidos.</li>
-        <li><strong>AMM</strong>: <em>automated market maker</em>, pool de liquidez on-ledger.</li>
-        <li><strong>Escrow</strong>: bloqueio temporário de XRP com condições.</li>
+        <li><strong>XRPL</strong>: sigla para <em>XRP Ledger</em>, a rede pública de pagamentos onde o XRP é o ativo nativo.</li>
+        <li><strong>XRP</strong>: ativo digital usado para taxas, reservas mínimas e como moeda-ponte em pagamentos. Não é uma empresa.</li>
+        <li><strong>Ledger</strong>: livro-razão com o estado da rede (saldos, ordens, trustlines, etc.). Na XRPL, um novo ledger é fechado tipicamente a cada 3–5 segundos.</li>
+        <li><strong>Conta</strong>: entidade identificada por um endereço que começa com <code>r...</code>. É controlada por uma ou mais chaves criptográficas.</li>
+        <li><strong>Chave privada</strong>: segredo criptográfico que permite movimentar fundos de uma conta. Deve ser mantida em sigilo absoluto.</li>
+        <li><strong>Frase-semente</strong>: representação em palavras da chave privada. Quem possui a seed controla a conta.</li>
+        <li><strong>UNL</strong>: <em>Unique Node List</em>. Lista de validadores confiáveis usada por um servidor para participar do consenso.</li>
+        <li><strong>Validador</strong>: servidor que participa do consenso, propondo e votando em conjuntos de transações a cada ledger.</li>
+        <li><strong>Trustline</strong>: relação de confiança para ativos emitidos (IOUs). Define limites de crédito e configurações como <em>rippling</em>.</li>
+        <li><strong>IOU</strong>: ativo emitido na XRPL que representa algo “fora da cadeia” (ex.: USD, EUR, stablecoins). Depende da confiança no emissor.</li>
+        <li><strong>Issued Currency</strong>: outro nome para IOU, enfatizando que o ativo é “emitido” por uma conta específica.</li>
+        <li><strong>Stablecoin</strong>: ativo que busca manter paridade com uma moeda (ex.: USD), geralmente emitido como IOU ou token.</li>
+        <li><strong>RWA</strong>: <em>Real World Asset</em>, ativos do mundo real (títulos, imóveis, etc.) representados em um ledger.</li>
+        <li><strong>AMM</strong>: <em>Automated Market Maker</em>, pool de liquidez on-ledger que permite swaps automáticos entre dois ativos.</li>
+        <li><strong>DEX</strong>: bolsa descentralizada nativa da XRPL, baseada em livros de ofertas (order books) para cada par de ativos.</li>
+        <li><strong>Escrow</strong>: bloqueio temporário de XRP com condições (por tempo ou por chave), útil para pagamentos condicionais.</li>
+        <li><strong>Pathfinding</strong>: mecanismo de roteamento de pagamentos que busca o melhor caminho de liquidez entre duas partes.</li>
+        <li><strong>Rippling</strong>: recurso que permite que saldos de IOUs “escorram” entre contas conectadas; pode ser desativado.</li>
+        <li><strong>Reserva mínima</strong>: quantidade de XRP que precisa ficar travada em uma conta para que ela exista, ajudando a evitar spam.</li>
+        <li><strong>Sequence</strong>: contador de transações de uma conta. Cada transação consome um número de sequência.</li>
+        <li><strong>Fee</strong>: taxa em XRP paga em cada transação. É queimada (removida do supply total) em pequena fração.</li>
+        <li><strong>Testnet</strong>: rede de testes que replica o funcionamento da XRPL principal, mas com ativos sem valor financeiro.</li>
+        <li><strong>Faucet</strong>: serviço que distribui XRP de teste em redes de desenvolvimento (testnet, devnet).</li>
+        <li><strong>Wallet</strong>: carteira usada para gerenciar chaves e interagir com a XRPL (pode ser de software ou hardware).</li>
       </ul>
     </main>
     <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
     <script src="/assets/script.js"></script>
   </body>
   </html>
+

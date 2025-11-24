@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>XRP/XRPL vs. BTC e ETH: diferenças práticas — XRP BRASIL</title>
+    <title>XRP/XRPL vs. BTC e ETH: diferenças práticas – XRP BRASIL</title>
     <meta name="description" content="Comparativo direto entre XRP/XRPL, Bitcoin (BTC) e Ethereum (ETH): propósito, consenso, finalização, taxas, programabilidade, energia e casos de uso." />
     <link rel="stylesheet" href="/assets/styles.css" />
     <link rel="icon" href="/assets/favicon.svg" />
@@ -29,74 +29,83 @@
     </header>
     <main class="container">
       <h1>XRP/XRPL vs. BTC e ETH: diferenças práticas</h1>
-      <p>Um guia direto para entender como <strong>XRP/XRPL</strong> se compara a <strong>Bitcoin (BTC)</strong> e <strong>Ethereum (ETH)</strong> em aspectos técnicos e de uso. Conteúdo educacional — não é recomendação de investimento.</p>
+      <p>Este guia compara, de forma direta, como <strong>XRP/XRPL</strong> se posiciona em relação a <strong>Bitcoin (BTC)</strong> e <strong>Ethereum (ETH)</strong> em aspectos técnicos e de uso. O objetivo é ajudar a entender o papel de cada tecnologia – não é recomendação de investimento.</p>
 
-      <h2>Propósito e desenho</h2>
+      <h2>1. Propósito e desenho</h2>
       <ul>
-        <li><strong>XRP/XRPL</strong>: pagamentos e liquidação em tempo real; DEX e AMM <em>nativos</em>; foco em baixa latência e custo.</li>
-        <li><strong>BTC</strong>: dinheiro digital resistente à censura; segurança via <em>proof-of-work</em> (PoW); uso como reserva de valor.</li>
-        <li><strong>ETH</strong>: plataforma de contratos inteligentes (<em>smart contracts</em>) e dApps; ecossistema DeFi/NFT amplo.</li>
+        <li><strong>XRP/XRPL</strong>: criada para <strong>pagamentos e liquidação em tempo quase real</strong>. A XRPL traz DEX e AMM nativos, foco em baixa latência e baixo custo de transação.</li>
+        <li><strong>BTC</strong>: pensado como “dinheiro digital” resistente à censura, com forte ênfase em <strong>segurança e imutabilidade</strong>. Uso comum como reserva de valor.</li>
+        <li><strong>ETH</strong>: voltado a ser uma <strong>plataforma de contratos inteligentes</strong>, permitindo DeFi, NFTs, DAOs, jogos e aplicações complexas.</li>
       </ul>
 
-      <h2>Consenso e finalização</h2>
+      <h2>2. Consenso e finalização</h2>
       <ul>
-        <li><strong>XRPL</strong>: consenso baseado em validação e listas UNL escolhidas pelos operadores; fechamento de ledger típico em ~3–5 s com finalização prática rápida.</li>
-        <li><strong>BTC</strong>: PoW com blocos ~10 min; segurança aumenta com confirmações (comum aguardar 6 blocos para alto valor).</li>
-        <li><strong>ETH</strong>: <em>proof-of-stake</em> (PoS) com blocos ~12 s; finalização econômica em poucos minutos quando a rede finaliza épocas.</li>
+        <li><strong>XRPL</strong>: usa um mecanismo de consenso baseado em validação e listas UNL escolhidas pelos operadores. Fecha um ledger em ~3–5 s, com finalização prática rápida para pagamentos.</li>
+        <li><strong>BTC</strong>: <em>proof‑of‑work</em> (PoW) com blocos de ~10 minutos. A segurança aumenta com o número de confirmações (é comum aguardar 6 blocos para valores altos).</li>
+        <li><strong>ETH</strong>: <em>proof‑of‑stake</em> (PoS) com blocos de ~12 s e finalização econômica quando a rede finaliza épocas consecutivas. Focado em balancear segurança e throughput para contratos inteligentes.</li>
       </ul>
 
-      <h2>Custos e desempenho</h2>
+      <h2>3. Custos e desempenho</h2>
       <ul>
-        <li><strong>XRPL</strong>: taxa dinâmica geralmente muito baixa; throughput alto para pagamentos simples.</li>
-        <li><strong>BTC</strong>: taxas variam conforme demanda on-chain; prioriza segurança/imutabilidade.</li>
-        <li><strong>ETH</strong>: <em>gas</em> variável; pode ser alto em períodos de congestão, com alternativas L2.</li>
+        <li><strong>XRPL</strong>: taxas dinâmicas geralmente muito baixas, projetadas para micro‑pagamentos e uso intensivo. Throughput alto para transações simples.</li>
+        <li><strong>BTC</strong>: taxas variam conforme a demanda por espaço em bloco; em períodos de congestão podem ficar elevadas, mas a prioridade é a segurança.</li>
+        <li><strong>ETH</strong>: custo medido em <em>gas</em>; pode ficar alto em momentos de uso intenso da rede. Soluções de segunda camada (L2) ajudam a baratear operações.</li>
       </ul>
 
-      <h2>Programabilidade</h2>
+      <h2>4. Programabilidade</h2>
       <ul>
-        <li><strong>XRPL</strong>: funções nativas (pagamentos, DEX, AMM, escrows, NFTs); não é uma VM Turing-completa na L1. Sidechains/bridges podem oferecer EVM/contratos.</li>
-        <li><strong>BTC</strong>: <em>script</em> limitado na L1; funcionalidades estendidas em camadas superiores (ex.: Lightning, sidechains).</li>
-        <li><strong>ETH</strong>: EVM e contratos inteligentes generalistas; base para DeFi/NFTs/DAOs.</li>
+        <li><strong>XRPL</strong>: foco em <strong>funcionalidades nativas</strong> (pagamentos, DEX, AMM, escrows, NFTs). A camada base não é uma VM Turing‑completa; lógica mais complexa tende a ser implementada em sidechains ou camadas externas.</li>
+        <li><strong>BTC</strong>: possui uma linguagem de script limitada na L1, suficiente para construções simples; funcionalidades avançadas surgem em camadas como Lightning e sidechains.</li>
+        <li><strong>ETH</strong>: oferece a EVM, uma máquina virtual generalista, que permite contratos inteligentes complexos e um ecossistema DeFi/NFT muito amplo.</li>
       </ul>
 
-      <h2>Energia e impacto</h2>
+      <h2>5. Energia e impacto ambiental</h2>
       <ul>
-        <li><strong>XRPL</strong>: consumo baixo por não usar mineração.</li>
-        <li><strong>BTC</strong>: PoW consome energia significativa como parte do modelo de segurança.</li>
-        <li><strong>ETH</strong>: PoS com consumo muito inferior ao PoW.</li>
+        <li><strong>XRPL</strong>: não usa mineração. O consumo de energia por transação tende a ser baixo, limitado ao custo de rodar validadores e nós.</li>
+        <li><strong>BTC</strong>: PoW consome energia significativa, parte do modelo de segurança de longo prazo da rede.</li>
+        <li><strong>ETH</strong>: migrou para PoS, reduzindo de forma expressiva o consumo energético em comparação com o antigo PoW.</li>
       </ul>
 
-      <h2>Economia do token</h2>
+      <h2>6. Economia do token</h2>
       <ul>
-        <li><strong>XRP</strong>: suprimento fixo (100 bilhões) definido na gênese; taxas são queimadas em pequena fração.</li>
-        <li><strong>BTC</strong>: emissão programada com <em>halvings</em> até ~21 milhões.</li>
-        <li><strong>ETH</strong>: emissão e queima (EIP-1559) sob PoS; oferta líquida pode variar.</li>
+        <li><strong>XRP</strong>: suprimento total fixo de 100 bilhões definido na gênese. Taxas pagas em XRP são queimadas em pequena fração, reduzindo a oferta total ao longo do tempo.</li>
+        <li><strong>BTC</strong>: emissão programada com <em>halvings</em> até um máximo de ~21 milhões de unidades. Narrativa forte como ativo escasso.</li>
+        <li><strong>ETH</strong>: sob PoS e com a queima de taxas (EIP‑1559), a oferta líquida pode crescer ou encolher dependendo da atividade na rede.</li>
       </ul>
 
-      <h2>Casos de uso típicos</h2>
+      <h2>7. Casos de uso típicos</h2>
       <ul>
-        <li><strong>XRPL</strong>: pagamentos transfronteiriços, liquidez de ponte, DEX/AMM nativos, ativos emitidos (IOUs), NFTs (XLS-20).</li>
-        <li><strong>BTC</strong>: reserva de valor, transferências on-chain, pagamentos via L2.</li>
-        <li><strong>ETH</strong>: DeFi (AMMs, lending), stablecoins ERC-20, NFTs, DAOs, jogos, L2s.</li>
+        <li><strong>XRPL</strong>: pagamentos transfronteiriços, liquidez de ponte, DEX/AMM nativos, stablecoins como IOUs, NFTs (XLS‑20), uso institucional em liquidação de pagamentos.</li>
+        <li><strong>BTC</strong>: reserva de valor, transferências on‑chain e pagamentos via soluções de segunda camada (Lightning).</li>
+        <li><strong>ETH</strong>: base para DeFi (AMMs, lending, derivativos), stablecoins ERC‑20, NFTs, DAOs, jogos on‑chain e aplicações em L2.</li>
+      </ul>
+
+      <h2>8. Como pensar a complementaridade</h2>
+      <p>Em vez de enxergar XRP, BTC e ETH como concorrentes diretos, muitos analistas os veem como <strong>camadas diferentes de uma mesma infraestrutura financeira</strong> emergente:</p>
+      <ul>
+        <li>BTC como <strong>ativo de reserva</strong> e “colateral duro”.</li>
+        <li>ETH como <strong>plataforma generalista</strong> para aplicações descentralizadas.</li>
+        <li>XRPL como <strong>camada especializada em pagamentos e liquidação rápida</strong>, com recursos nativos para câmbio e emissão de ativos.</li>
       </ul>
 
       <h2>Referências</h2>
       <ul>
-        <li><a href="https://xrpl.org/" target="_blank" rel="noopener">XRPL.org — Documentação</a></li>
-        <li><a href="https://xrpl.org/docs/concepts/defi/amm/" target="_blank" rel="noopener">XRPL.org — AMM</a></li>
-        <li><a href="https://xrpl.org/docs/concepts/tokens/nftoken/" target="_blank" rel="noopener">XRPL.org — NFTs (XLS-20)</a></li>
-        <li><a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener">Bitcoin — Whitepaper</a></li>
-        <li><a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/" target="_blank" rel="noopener">Ethereum.org — Proof of Stake</a></li>
-        <li><a href="https://ethereum.org/en/developers/docs/gas/" target="_blank" rel="noopener">Ethereum.org — Gas e taxas</a></li>
-        <li><a href="https://eips.ethereum.org/EIPS/eip-1559" target="_blank" rel="noopener">EIP-1559 — Fee market change</a></li>
+        <li><a href="https://xrpl.org/" target="_blank" rel="noopener">XRPL.org – Documentação</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/defi/amm/" target="_blank" rel="noopener">XRPL.org – AMM</a></li>
+        <li><a href="https://xrpl.org/docs/concepts/tokens/nftoken/" target="_blank" rel="noopener">XRPL.org – NFTs (XLS‑20)</a></li>
+        <li><a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener">Bitcoin – Whitepaper</a></li>
+        <li><a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/" target="_blank" rel="noopener">Ethereum.org – Proof of Stake</a></li>
+        <li><a href="https://ethereum.org/en/developers/docs/gas/" target="_blank" rel="noopener">Ethereum.org – Gas e taxas</a></li>
+        <li><a href="https://eips.ethereum.org/EIPS/eip-1559" target="_blank" rel="noopener">EIP‑1559 – Fee market change</a></li>
         <li><a href="https://lightning.network/" target="_blank" rel="noopener">Lightning Network</a></li>
       </ul>
 
-      <section class="notice"><p>As redes evoluem ao longo do tempo. Verifique documentações oficiais para mudanças de protocolo e recursos. Nada aqui é conselho financeiro.</p></section>
+      <section class="notice"><p>As três redes evoluem constantemente. Consulte sempre a documentação oficial para detalhes atualizados de protocolo e recursos. Nada aqui é conselho financeiro.</p></section>
 
-      <p>Leituras relacionadas: <a href="/artigos/ripple-xrp-xrpl.html">Ripple x XRP x XRPL</a> • <a href="/artigos/xrp-xrpl-e-ripple.html">Como XRP/XRPL se conectam à Ripple</a> • <a href="/artigos/sec-vs-ripple-xrpl.html">SEC x Ripple: o que a Justiça decidiu</a>.</p>
+      <p>Leituras relacionadas: <a href="/artigos/ripple-xrp-xrpl.html">Ripple x XRP x XRPL</a> · <a href="/artigos/xrp-xrpl-e-ripple.html">Como XRP/XRPL se conectam à Ripple</a> · <a href="/artigos/sec-vs-ripple-xrp.html">SEC x Ripple: o que a Justiça decidiu</a>.</p>
     </main>
     <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
     <script src="/assets/script.js"></script>
   </body>
   </html>
+
