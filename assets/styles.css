@@ -3,7 +3,7 @@
   --card: #0f1318;
   --text: #e7edf3;
   --muted: #a6b3c2;
-  /* Paleta alinhada à logo (verde + ciano) */
+  /* Paleta alinhada a logo (verde + ciano) */
   --primary: #00e6ff;      /* ciano */
   --primary-2: #00c9e3;    /* ciano escuro */
   --brand-green: #2de56e;  /* verde neon */
@@ -85,7 +85,7 @@ section{margin:28px 0}
 .founder h3{margin:0 0 6px}
 .founder p{color:var(--muted);margin:0}
 
-/* Doações (refinado) */
+/* Doacoes (refinado) */
 .donate{background:transparent;border:0;border-radius:0;padding:0;margin-top:28px}
 .donate--compact{text-align:center}
 .donate h2{font-size:18px;margin:0 0 8px}
@@ -110,7 +110,7 @@ details.donate[open] .donate-details{display:block}
 /* Utilidades */
 .hidden{display:none !important}
 
-/* Banner do X (desabilitado por padrão) */
+/* Banner do X (desabilitado por padrao) */
 .x-banner{width:100%;margin:22px 0;border:1px dashed var(--border);border-radius:14px;padding:14px;background:rgba(0,230,255,.06);text-align:center}
 .x-banner p{margin:0;color:var(--muted)}
 .x-banner strong{color:#eafcff}
@@ -118,15 +118,14 @@ details.donate[open] .donate-details{display:block}
 /* Variante mais discreta */
 .x-banner--compact{padding:10px;margin:16px 0;background:rgba(0,230,255,.04);font-size:14px;opacity:.95}
 
-/* Ícones inline padrão */
+/* Icones inline padrao */
 [data-icon]{display:inline-block;width:18px;height:18px;vertical-align:-3px;margin-right:6px;color:var(--text);opacity:.9}
 [data-icon] svg{width:18px;height:18px;display:inline-block}
 
-/* Card de métricas XRPL/XRP */
-.metrics-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:stretch}
-.metrics-block{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
-.metrics-block h3{margin:0 0 4px}
-.metrics-block p{margin:2px 0}
+/* Card de metricas XRPL/XRXP (somente local/dev) */
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:stretch}
+.metrics-card h3{margin:0 0 4px}
+.metrics-card p{margin:2px 0}
 .metric-note{font-size:11px;color:var(--muted);margin-top:4px}
 .metric-change-positive{color:var(--brand-green)}
 .metric-change-negative{color:#ff6b6b}
@@ -134,7 +133,3 @@ details.donate[open] .donate-details{display:block}
 .network-dot{width:8px;height:8px;border-radius:50%;background:#666;box-shadow:0 0 0 3px rgba(0,0,0,.3)}
 .network-dot.is-up{background:var(--brand-green)}
 .network-dot.is-down{background:#ff6b6b}
-
-/* Overrides para layout dos cards de m�tricas em duas colunas */
-.card.metrics-card{background:transparent;border:0;padding:0}
-.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:stretch}

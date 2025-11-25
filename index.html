@@ -50,6 +50,30 @@
         </div>
       </section>
 
+      <!-- DEV: metricas XRPL/XRP (apenas local) -->
+      <section>
+        <h2>Panorama da XRPL hoje</h2>
+        <div class="metrics-grid">
+          <article class="card metrics-card">
+            <div class="metrics-block">
+              <h3>Atividade recente da rede</h3>
+              <p class="network-status"><span class="network-dot" id="metric-network-dot"></span><span id="metric-network-text">Verificando rede...</span></p>
+              <p>Transacoes (ultimos minutos): <span id="metric-tx-recent">-</span></p>
+              <p>Media aproximada: <span id="metric-tps-recent">-</span> tx/s</p>
+            </div>
+          </article>
+          <article class="card metrics-card">
+            <div class="metrics-block">
+              <h3>Mercado</h3>
+              <p>Preco XRP: <span id="metric-price-usd">-</span></p>
+              <p>Variacao 24h: <span id="metric-change-24h">-</span></p>
+              <p class="metric-note">Dados via CoinGecko e nos XRPL. Uso educacional, nao e recomendacao de investimento.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- FIM metricas XRPL/XRP (apenas local) -->
+
       <section>
         <h2>Artigo em destaque</h2>
         <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
@@ -175,4 +199,3 @@
     </script>
   </body>
   </html>
-
