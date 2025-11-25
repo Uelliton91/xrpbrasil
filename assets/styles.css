@@ -122,18 +122,7 @@ details.donate[open] .donate-details{display:block}
 [data-icon]{display:inline-block;width:18px;height:18px;vertical-align:-3px;margin-right:6px;color:var(--text);opacity:.9}
 [data-icon] svg{width:18px;height:18px;display:inline-block}
 
-/* XPMarket ETF card */
-.etf-card .card{border-radius:18px;padding:24px}
-.etf-card__header{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-.etf-card__eyebrow{margin:0;color:var(--brand-green);text-transform:uppercase;font-size:12px;letter-spacing:.12em;font-weight:700}
-.etf-card__header h2{margin:4px 0 6px}
-.etf-card__subtitle{margin:0;color:var(--muted)}
-.etf-card__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.etf-card__grid article{border:1px solid var(--border);border-radius:12px;padding:14px;background:rgba(0,0,0,.15)}
-.etf-card__grid h3{margin:0 0 6px;font-size:15px}
-.etf-card__grid p{margin:2px 0}
-.etf-volume{font-size:22px;font-weight:700}
-.metric-note{font-size:12px;color:var(--muted);margin-top:16px}
+
 
 /* Card de ETF */
 .price-card .card{border-radius:18px;padding:24px}
@@ -161,3 +150,34 @@ details.donate[open] .donate-details{display:block}
 /* Overrides para layout dos cards de m�tricas em duas colunas */
 .card.metrics-card{background:transparent;border:0;padding:0}
 .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:stretch}
+
+/* Card de ETFs */
+.xp-etf-card{margin:36px 0}
+.xp-etf-card__shell{padding:24px;background:var(--card);border:1px solid var(--border);border-radius:18px}
+.xp-etf-card__header{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.xp-etf-card__grid{display:grid;gap:18px;align-items:start;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.xp-etf-block{background:rgba(0,0,0,.15);border:1px solid var(--border);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.xp-etf-block h3{margin:0}
+.xp-etf-block__group{border:1px solid var(--border);border-radius:12px;padding:14px}
+.xp-etf-block__group--grid{padding:0;border:none}
+.xp-etf-label{font-size:11px;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.xp-etf-block dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.xp-etf-stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.xp-etf-block dl div{background:rgba(0,0,0,.1);padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.05)}
+.xp-etf-block dt{font-size:11px;color:var(--muted);margin:0 0 4px}
+.xp-etf-block dd{margin:0;font-size:16px;font-weight:700;color:var(--text)}
+.xp-etf-note{margin:0;color:var(--muted);font-size:13px}
+.xp-etf-xrp div{display:flex;flex-direction:column;gap:4px}
+.xp-etf-status{margin:10px 0 0;font-size:12px;color:var(--muted)}
+.xp-etf-status.is-error{color:#ff6b6b}
+.xp-etf-card__footer{margin-top:18px;font-size:12px;color:var(--muted)}
+.xp-etf-block--usd .xp-etf-stat-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.xp-etf-block--conversion .xp-etf-stat-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+@media (min-width:1100px){
+.xp-etf-card__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.xp-etf-block--usd .xp-etf-stat-grid{grid-template-columns:repeat(2,minmax(220px,1fr))}
+.xp-etf-block--conversion .xp-etf-stat-grid{grid-template-columns:repeat(2,minmax(220px,1fr))}
+}
+@media (max-width:700px){
+  .xp-etf-stat-grid{grid-template-columns:1fr}
+}

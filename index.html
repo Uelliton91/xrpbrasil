@@ -50,27 +50,72 @@
         </div>
       </section>
 
-      <section class="etf-card">
-        <div class="card">
-          <h2>ETFs de XRP (dados informativos)</h2>
-          <ul id="etf-list"></ul>
-          <p class="metric-note">Fontes internas. Valores aproximados em USD.</p>
-        </div>
-      </section>
-
-      <section class="etf-card" aria-live="polite">
-        <div class="card">
-          <div class="etf-card__header">
+      <section class="xp-etf-card" data-etf-card>
+        <div class="card xp-etf-card__shell">
+          <header class="xp-etf-card__header">
             <div>
-              <p class="etf-card__eyebrow">Dados XPMarket</p>
-              <h2>ETF XRP – volumes recentes</h2>
-              <p class="etf-card__subtitle">Volumes aproximados informados pelo XPMarket (Bitwise, Franklin, Canary e Grayscale).</p>
+              <p class="kicker">Fluxo institucional</p>
+              <h2>ETFs de XRP – impacto estimado</h2>
             </div>
+            <p class="metric-note">Volumes aproximados fornecidos pelo XPMarket. Conversão de spot para XRP usa o preço do XRP na XRPL (XRPSCAN).</p>
+          </header>
+          <div class="xp-etf-card__grid">
+            <article class="xp-etf-block xp-etf-block--usd">
+              <h3>ETFs 100% XRP (USD)</h3>
+              <p class="xp-etf-note">Fluxo de capital dos fundos que compram XRP diretamente.</p>
+              <div class="xp-etf-block__group xp-etf-block__group--grid">
+                <dl class="xp-etf-stat-grid">
+                  <div>
+                    <dt>Últimas 24h</dt>
+                    <dd data-etf="daily-spot">—</dd>
+                  </div>
+                  <div>
+                    <dt>Últimos 7 dias</dt>
+                    <dd data-etf="weekly-spot">—</dd>
+                  </div>
+                  <div>
+                    <dt>Projeção 30 dias</dt>
+                    <dd data-etf="monthly-spot">—</dd>
+                  </div>
+                  <div>
+                    <dt>Projeção 12 meses</dt>
+                    <dd data-etf="yearly-spot">—</dd>
+                  </div>
+                </dl>
+                </dl>
+              </div>
+            </article>
+            <article class="xp-etf-block xp-etf-block--conversion">
+              <h3>Conversão estimada em XRP</h3>
+              <p class="xp-etf-note">Baseado no preço médio do XRP disponível publicamente. Utilizamos apenas o fluxo de ETFs spot (100% custódia em XRP).</p>
+              <dl class="xp-etf-xrp xp-etf-stat-grid">
+                <div>
+                  <dt>Preço de referência</dt>
+                  <dd data-etf="xrp-price">—</dd>
+                </div>
+                <div>
+                  <dt>Spot – últimas 24h</dt>
+                  <dd data-etf="daily-xrp">—</dd>
+                </div>
+                <div>
+                  <dt>Spot – últimos 7 dias</dt>
+                  <dd data-etf="weekly-xrp">—</dd>
+                </div>
+                <div>
+                  <dt>Projeção 30 dias</dt>
+                  <dd data-etf="monthly-xrp">—</dd>
+                </div>
+                <div>
+                  <dt>Projeção 12 meses</dt>
+                  <dd data-etf="yearly-xrp">—</dd>
+                </div>
+              </dl>
+              <p class="xp-etf-status" data-etf-status>Carregando dados…</p>
+            </article>
           </div>
-          <div class="etf-card__grid" id="xp-etf-list">
-            <p style="margin:0;color:var(--muted)">Carregando…</p>
-          </div>
-          <p class="metric-note">Fonte: <a href="https://xpmarket.com/etf" target="_blank" rel="noopener noreferrer">xpmarket.com</a>. Valores em USD.</p>
+          <footer class="xp-etf-card__footer">
+            <p>Fonte: XPMarket (ETF Terminal) e XRPSCAN. Atualizado em <span data-etf="updated-at">—</span>.</p>
+          </footer>
         </div>
       </section>
 
