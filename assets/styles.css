@@ -121,3 +121,19 @@ details.donate[open] .donate-details{display:block}
 /* Ícones inline padrão */
 [data-icon]{display:inline-block;width:18px;height:18px;vertical-align:-3px;margin-right:6px;color:var(--text);opacity:.9}
 [data-icon] svg{width:18px;height:18px;display:inline-block}
+
+/* Card de métricas XRPL/XRP */
+.metrics-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:stretch}
+.metrics-block{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.metrics-block h3{margin:0 0 4px}
+.metrics-block p{margin:2px 0}
+.metric-note{font-size:11px;color:var(--muted);margin-top:4px}
+.metric-change-positive{color:var(--brand-green)}
+.metric-change-negative{color:#ff6b6b}
+.network-status{display:flex;align-items:center;gap:6px}
+.network-dot{width:8px;height:8px;border-radius:50%;background:#666;box-shadow:0 0 0 3px rgba(0,0,0,.3)}
+.network-dot.is-up{background:var(--brand-green)}
+.network-dot.is-down{background:#ff6b6b}
+
+/* Overrides para layout dos cards de m�tricas em duas colunas */
+.card.metrics-card{background:transparent;border:0;padding:0}
