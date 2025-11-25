@@ -48,6 +48,30 @@
         <div class="hero-brand">
           <img class="hero-logo" src="/assets/logo.png" alt="Logotipo XRP BRASIL: árvore com símbolo XRP" onerror="this.onerror=null;this.src='/assets/logo.svg';" />
         </div>
+  </section>
+
+      <!-- DEV ONLY: Card unico de metricas -->
+      <section>
+        <div class="card live-metrics">
+          <div class="live-metrics__header">
+            <h2>Panorama da XRPL hoje</h2>
+            <p>Dados aproximados, atualizados automaticamente.</p>
+          </div>
+          <div class="live-metrics__grid">
+            <article>
+              <h3>Rede (ultimos minutos)</h3>
+              <p class="network-status"><span class="network-dot" id="metric-network-dot"></span><span id="metric-network-text">Verificando rede...</span></p>
+              <p>Transacoes registradas: <span id="metric-tx-recent">-</span></p>
+              <p>Media aproximada: <span id="metric-tps-recent">-</span> tx/s</p>
+            </article>
+            <article>
+              <h3>Mercado</h3>
+              <p>Preco XRP: <span id="metric-price-usd">-</span></p>
+              <p>Variacao 24h: <span id="metric-change-24h">-</span></p>
+            </article>
+          </div>
+          <p class="metric-note">Fontes publicas: CoinGecko e nodes XRPL (Clio). Conteudo educacional, sem recomendacao de investimento.</p>
+        </div>
       </section>
 
       <section>
