@@ -1,14 +1,14 @@
 document.getElementById('year').textContent = new Date().getFullYear();
-// Espaco para scripts de anuncios (AdSense/Ezoic) quando for ativar.
-// Exemplo AdSense (substitua pelo seu ID e remova os comentarios):
+// Espaço para scripts de anúncios (AdSense/Ezoic) quando for ativar.
+// Exemplo AdSense (substitua pelo seu ID e remova os comentários):
 // (function(){ var s=document.createElement('script'); s.async=true; s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX'; s.crossOrigin='anonymous'; document.head.appendChild(s); })();
 
-// Utilitario simples de copiar para a area de transferencia
+// Utilitário simples de copiar para a área de transferência
 function copyText(text){
   if (navigator.clipboard && window.isSecureContext) {
     return navigator.clipboard.writeText(text);
   }
-  // Fallback para contextos nao seguros
+  // Fallback para contextos não seguros
   return new Promise(function(resolve, reject){
     try {
       var ta = document.createElement('textarea');
@@ -42,7 +42,6 @@ document.addEventListener('click', function(e){
   }
 });
 
-// Inicializacoes de metricas (apenas ambiente local/dev)
 document.addEventListener('DOMContentLoaded', function(){
   initMarketMetrics();
   initNetworkMetrics();
@@ -84,17 +83,27 @@ function initMarketMetrics(){
       }
     })
     .catch(function(){
-      priceEl.textContent = '-';
-      changeEl.textContent = '-';
+      priceEl.title = 'Não foi possível carregar os dados de mercado agora.';
+      changeEl.title = 'Não foi possível carregar os dados de mercado agora.';
     });
 }
 
 function initNetworkMetrics(){
   var txEl = document.getElementById('metric-tx-recent');
   var tpsEl = document.getElementById('metric-tps-recent');
+  var ledgerEl = document.getElementById('metric-ledger-index');
+  var feeEl = document.getElementById('metric-fee-base');
   var statusTextEl = document.getElementById('metric-network-text');
   var statusDotEl = document.getElementById('metric-network-dot');
   if(!txEl || !tpsEl){ return; }
+
+  // Esconde linhas antigas que n�o queremos mais exibir
+  if(ledgerEl && ledgerEl.parentElement){
+    ledgerEl.parentElement.style.display = 'none';
+  }
+  if(feeEl && feeEl.parentElement){
+    feeEl.parentElement.style.display = 'none';
+  }
 
   function setStatus(text, state){
     if(statusTextEl){
@@ -107,10 +116,10 @@ function initNetworkMetrics(){
     }
   }
 
-  setStatus('Verificando rede...', null);
+  setStatus('Rede ativa', 'up');
 
   if(typeof WebSocket === 'undefined'){
-    setStatus('Browser sem WebSocket', 'down');
+    setStatus('Rede nao suportada neste navegador', 'down');
     return;
   }
 
@@ -118,7 +127,6 @@ function initNetworkMetrics(){
   try{
     ws = new WebSocket('wss://s1.ripple.com');
   }catch(e){
-    setStatus('Falha ao conectar', 'down');
     return;
   }
 
@@ -126,7 +134,6 @@ function initNetworkMetrics(){
   var WINDOW_SECONDS = 300; // ~5 minutos
 
   ws.onopen = function(){
-    setStatus('Conectando ao node XRPL...', null);
     try{
       ws.send(JSON.stringify({
         id: 'xrpbrasil-metrics',
@@ -147,7 +154,28 @@ function initNetworkMetrics(){
 
     var count = data.txn_count;
     var ledgerTime = data.ledger_time;
+    var ledgerIndex = data.ledger_index;
+    var feeBaseDrops = data.fee_base;
     if(typeof count !== 'number'){ return; }
+
+    if(typeof ledgerIndex === 'number' && ledgerEl){
+      try{
+        ledgerEl.textContent = ledgerIndex.toLocaleString('pt-BR');
+      }catch(e){
+        ledgerEl.textContent = String(ledgerIndex);
+      }
+    }
+
+    if(typeof feeBaseDrops === 'number' && feeEl){
+      var feeXrp = feeBaseDrops / 1000000;
+      var feeText;
+      try{
+        feeText = feeXrp.toLocaleString('pt-BR', {minimumFractionDigits:6, maximumFractionDigits:6});
+      }catch(e){
+        feeText = feeXrp.toFixed(6).replace('.', ',');
+      }
+      feeEl.textContent = feeText;
+    }
 
     var now = typeof ledgerTime === 'number' ? ledgerTime : (Date.now() / 1000);
     samples.push({ t: now, tx: count });
@@ -179,11 +207,8 @@ function initNetworkMetrics(){
   };
 
   ws.onerror = function(){
-    setStatus('Erro ao ler rede', 'down');
-  };
-
-  ws.onclose = function(){
-    setStatus('Conexao encerrada', 'down');
+    txEl.title = 'Não foi possível carregar a atividade recente da rede.';
+    tpsEl.title = 'Não foi possível carregar a atividade recente da rede.';
   };
 
   window.addEventListener('beforeunload', function(){
