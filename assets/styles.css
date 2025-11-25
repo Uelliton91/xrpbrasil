@@ -138,21 +138,3 @@ details.donate[open] .donate-details{display:block}
 /* Overrides para layout dos cards de m�tricas em duas colunas */
 .card.metrics-card{background:transparent;border:0;padding:0}
 .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:stretch}
-
-
-/* Card unico de metricas (apenas local/dev) */
-.live-metrics{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px}
-.live-metrics__header{display:flex;flex-direction:column;gap:4px;margin-bottom:14px}
-.live-metrics__header h2{margin:0}
-.live-metrics__header p{margin:0;color:var(--muted);font-size:14px}
-.live-metrics__grid{display:flex;flex-wrap:wrap;gap:16px}
-.live-metrics__grid article{flex:1 1 260px;min-width:240px;border:1px solid var(--border);border-radius:14px;padding:14px;background:rgba(0,0,0,.18)}
-.live-metrics h3{margin:0 0 6px;font-size:16px}
-.live-metrics p{margin:4px 0;font-size:14px}
-.metric-note{font-size:12px;color:var(--muted);margin-top:14px}
-.network-status{display:flex;align-items:center;gap:6px;font-weight:600}
-.network-dot{width:10px;height:10px;border-radius:50%;background:#666;box-shadow:0 0 6px rgba(0,0,0,.35)}
-.network-dot.is-up{background:var(--brand-green)}
-.network-dot.is-down{background:#ff6b6b}
-.metric-change-positive{color:var(--brand-green)}
-.metric-change-negative{color:#ff6b6b}
