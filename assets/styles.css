@@ -137,3 +137,4 @@ details.donate[open] .donate-details{display:block}
 
 /* Overrides para layout dos cards de m�tricas em duas colunas */
 .card.metrics-card{background:transparent;border:0;padding:0}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:stretch}
