@@ -43,25 +43,42 @@ document.addEventListener('click', function(e){
 });
 
 document.addEventListener('DOMContentLoaded', function(){
-  renderStaticEtfs();
+  fetchXpMarketEtfs();
 });
 
-function renderStaticEtfs(){
-  var container = document.getElementById('etf-list');
+function fetchXpMarketEtfs(){
+  var container = document.getElementById('xp-etf-list');
   if(!container){ return; }
-  fetch('/data/etf-xrp.json')
-    .then(function(res){ return res.json(); })
+  fetch('https://api.xpmarket.com/api/v1/etf/top')
+    .then(function(res){
+      if(!res.ok){ throw new Error('network'); }
+      return res.json();
+    })
     .then(function(data){
-      container.innerHTML = data.map(function(item){
-        return '<li><strong>' + item.name + ':</strong> ' + formatVolume(item.volume_usd) + ' USD</li>';
+      if(!Array.isArray(data)){ throw new Error('missing'); }
+      var subset = data.filter(function(item){
+        return item.name && /bitwise|franklin|canary|grayscale/i.test(item.name);
+      });
+      if(subset.length === 0){
+        container.innerHTML = '<p style="margin:0;color:var(--muted)">Sem dados disponíveis.</p>';
+        return;
+      }
+      container.innerHTML = subset.map(function(item){
+        return '<article><h3>' + item.name + '</h3><p class="etf-volume">' + formatVolume(item.volume_usd || 0) + ' USD</p><p>Variação 24h: ' + formatChange(item.change_24h_pct) + '</p></article>';
       }).join('');
     })
     .catch(function(){
-      container.innerHTML = '<li>Não foi possível carregar os dados.</li>';
+      container.innerHTML = '<p style="margin:0;color:var(--muted)">Não foi possível carregar os dados.</p>';
     });
 }
 
 function formatVolume(value){
   if(!isFinite(value)){ return '-'; }
   return value.toLocaleString('pt-BR', {maximumFractionDigits:0});
+}
+
+function formatChange(value){
+  if(!isFinite(value)){ return '-'; }
+  var formatted = (value >= 0 ? '+' : '') + value.toFixed(2).replace('.', ',') + '%';
+  return formatted;
 }
