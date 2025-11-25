@@ -122,6 +122,25 @@ details.donate[open] .donate-details{display:block}
 [data-icon]{display:inline-block;width:18px;height:18px;vertical-align:-3px;margin-right:6px;color:var(--text);opacity:.9}
 [data-icon] svg{width:18px;height:18px;display:inline-block}
 
+/* Card de ETF */
+.etf-card .card{border-radius:18px;padding:24px}
+.etf-card__header{display:flex;flex-direction:column;gap:16px;margin-bottom:18px}
+.etf-card__eyebrow{margin:0;color:var(--brand-green);text-transform:uppercase;font-size:13px;letter-spacing:.1em;font-weight:700}
+.etf-card__header h2{margin:4px 0 8px}
+.etf-card__subtitle{margin:0;color:var(--muted);max-width:640px}
+.etf-card__symbol{display:flex;flex-direction:column;gap:6px;max-width:180px;font-size:14px}
+.etf-card__symbol select{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:8px}
+.etf-card__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.etf-card__grid article{border:1px solid var(--border);border-radius:14px;padding:16px;background:rgba(0,0,0,.18)}
+.etf-card__grid h3{margin:0 0 6px;font-size:15px}
+.etf-number{font-size:24px;font-weight:800;margin:8px 0}
+.etf-note{margin:0;color:var(--muted);font-size:13px}
+.metric-note{font-size:12px;color:var(--muted);margin-top:16px}
+@media (min-width:820px){
+  .etf-card__header{flex-direction:row;justify-content:space-between;align-items:flex-start}
+  .etf-card__symbol{align-items:flex-end}
+}
+
 /* Card de métricas XRPL/XRP */
 .metrics-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:stretch}
 .metrics-block{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}

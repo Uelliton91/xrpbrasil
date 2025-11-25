@@ -1,14 +1,24 @@
-﻿# OS
-.DS_Store
-Thumbs.db
-
-# Node/Build (se vier a usar futuramente)
-node_modules/
+.idea/
+lib/
 dist/
-build/
+tmp/
 
-# Python http.server cache
-__pycache__/
+node_modules
+bower_components
+.sass-cache/
+.gem/
+/.tmp/
 
-# Local Netlify folder
-.netlify
+.DS_Store
+Private/
+.svn/
+
+*.swp
+*~
+*.pyc
+
+atomsconsoledb.sqlite3
+debug_bin
+.vuuchas
+vue.config.js
+/data/*.json
