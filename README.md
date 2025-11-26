@@ -33,9 +33,5 @@ python -m http.server 8000 --bind 0.0.0.0
 - Cabeçalhos HTTP (CSP, X-Content-Type-Options, etc.) via `netlify.toml`.
 - Sem formulários/login - site estático.
 
-## SEO e sitemap
-
-- Gere/atualize as meta tags padronizadas executando `python scripts/apply_seo_meta.py`.
-- Recrie o arquivo `sitemap.xml` sempre que adicionar páginas com `python scripts/generate_sitemap.py` e envie o sitemap para o Search Console.
-
 Contato: contato@xrpbrasil.com.br
+
