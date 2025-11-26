@@ -3,13 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>XRP BRASIL - Portal educacional sobre XRP e XRPL</title>
-    <meta name="description" content="O maior portal educacional do Brasil sobre XRP e XRPL - 100% focado na tecnologia, não no preço. Tutoriais, guias, glossário e ferramentas." />
-    <link rel="canonical" href="/" />
+    <title>XRP BRASIL | Guias, artigos e ferramentas sobre XRP e XRPL</title>
+    <meta name="description" content="Portal educacional em português sobre XRP, Ripple e a XRP Ledger: guias completos, glossário, artigos, ferramentas e newsletter focados em tecnologia e segurança." />
+
+    <!-- SEO meta -->
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="XRP BRASIL" />
+    <meta name="application-name" content="XRP BRASIL" />
+    <meta name="theme-color" content="#030712" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href="https://xrpbrasil.com.br/" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/" hreflang="pt-br" />
+    <meta name="keywords" content="XRP, XRPL, Ripple, XRP Ledger, Pagamentos em tempo real, XRP BRASIL, Guias, artigos e ferramentas sobre XRP e XRPL" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="XRP BRASIL" />
+    <meta property="og:title" content="XRP BRASIL | Guias, artigos e ferramentas sobre XRP e XRPL" />
+    <meta property="og:description" content="Portal educacional em português sobre XRP, Ripple e a XRP Ledger: guias completos, glossário, artigos, ferramentas e newsletter focados em tecnologia e segurança." />
+    <meta property="og:url" content="https://xrpbrasil.com.br/" />
+    <meta property="og:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Brasil_Xrp" />
+    <meta name="twitter:creator" content="@Brasil_Xrp" />
+    <meta name="twitter:title" content="XRP BRASIL | Guias, artigos e ferramentas sobre XRP e XRPL" />
+    <meta name="twitter:description" content="Portal educacional em português sobre XRP, Ripple e a XRP Ledger: guias completos, glossário, artigos, ferramentas e newsletter focados em tecnologia e segurança." />
+    <meta name="twitter:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <!-- /SEO meta -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" href="/assets/favicon.svg" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="stylesheet" href="/assets/styles.css" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6769888742388798" crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
@@ -23,7 +47,7 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <a class="brand" href="/"><img src="/assets/logo.svg" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.png';"/> <span>XRP BRASIL</span></a>
       <nav class="nav">
         <a href="/pages/guia.html">Guia</a>
         <a href="/pages/xrpl.html">XRPL</a>
@@ -38,15 +62,35 @@
     <main class="container">
       <section class="hero">
         <div class="hero-content">
-          <p class="kicker">Posicionamento</p>
-          <h1>O maior portal educacional do Brasil sobre XRP e XRPL - 100% focado na tecnologia.</h1>
-          <p class="lead">Conteúdo claro, didático e em português do Brasil. Sem promessas de lucro. Sem ruído. Apenas a tecnologia que move pagamentos globais em tempo real.</p>
+          <p class="kicker">Educação em XRP e XRPL</p>
+          <h1>Guias gratuitos sobre XRP, Ripple e a XRP Ledger em português.</h1>
+          <p class="lead">Artigos, glossário, ferramentas e newsletter para entender a tecnologia de pagamentos em tempo real, com foco em segurança, regulação, infraestrutura e usos reais do XRP.</p>
           <div class="cta">
             <a class="btn primary" href="/pages/guia.html">Começar pelo Guia</a>
           </div>
         </div>
         <div class="hero-brand">
-          <img class="hero-logo" src="/assets/logo.png" alt="Logotipo XRP BRASIL: árvore com símbolo XRP" onerror="this.onerror=null;this.src='/assets/logo.svg';" />
+          <img class="hero-logo" src="/assets/logo.svg" alt="Logotipo XRP BRASIL: árvore com símbolo XRP" onerror="this.onerror=null;this.src='/assets/logo.png';" fetchpriority="high" decoding="async" />
+        </div>
+      </section>
+
+      <section class="ticker" aria-live="polite">
+        <div class="card ticker-card" id="xrp-price-card">
+          <div class="ticker-card__top">
+            <div class="ticker-card__main">
+              <p class="ticker-card__label">XRP / USD</p>
+              <p class="ticker-card__value" id="xrp-price">--</p>
+              <p class="ticker-card__subvalue" id="xrp-price-brl">≈ R$ --</p>
+            </div>
+            <div class="ticker-card__meta">
+              <span class="ticker-card__chip" id="xrp-change">--</span>
+              <span class="ticker-card__status" id="xrp-price-status">Consultando fontes...</span>
+            </div>
+          </div>
+          <div class="ticker-card__footer">
+            <span>Máx 24h: <strong id="xrp-high">--</strong></span>
+            <span class="ticker-card__footer-min">Mín 24h: <strong id="xrp-low">--</strong></span>
+          </div>
         </div>
       </section>
 
@@ -146,12 +190,25 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "XRP BRASIL",
-        "url": "https://xrpbrasil.example/",
+        "url": "https://xrpbrasil.com.br/",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://xrpbrasil.example/?q={search_term_string}",
+          "target": "https://xrpbrasil.com.br/?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "XRP BRASIL",
+        "url": "https://xrpbrasil.com.br/",
+        "logo": "https://xrpbrasil.com.br/assets/logo.png",
+        "sameAs": [
+          "https://x.com/Brasil_Xrp"
+        ]
       }
     </script>
 
