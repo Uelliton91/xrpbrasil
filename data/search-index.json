@@ -1,0 +1,183 @@
+[
+  {
+    "title": "Guia inicial de XRP e XRPL",
+    "description": "Passo a passo para entender XRP, a XRPL e as boas praticas de seguranca antes de usar a rede.",
+    "url": "/pages/guia.html",
+    "category": "Guias",
+    "keywords": [
+      "guia",
+      "iniciante",
+      "seguranca",
+      "xrp"
+    ]
+  },
+  {
+    "title": "Como funciona a XRPL",
+    "description": "Explica consenso, ledger, contas, DEX nativa, AMM e taxas da rede XRP Ledger.",
+    "url": "/pages/xrpl.html",
+    "category": "Guias",
+    "keywords": [
+      "xrp",
+      "xrpl",
+      "amm",
+      "consenso",
+      "ledger"
+    ]
+  },
+  {
+    "title": "Sobre o projeto XRP BRASIL",
+    "description": "Visao geral do portal educacional, pol&iacute;tica editorial e formas de contato.",
+    "url": "/pages/sobre.html",
+    "category": "Institucional",
+    "keywords": [
+      "xrp",
+      "sobre",
+      "missao",
+      "contato"
+    ]
+  },
+  {
+    "title": "Hist&oacute;ria do XRP e da XRPL",
+    "description": "Linha do tempo com os principais marcos desde 2012, fundadores e evolucao da rede.",
+    "url": "/artigos/historia-xrp-xrpl.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "historia",
+      "fundadores",
+      "timeline"
+    ]
+  },
+  {
+    "title": "Introducao pratica a XRPL",
+    "description": "Tutorial para criar uma conta na testnet, enviar transacoes e acompanhar no XRPScan.",
+    "url": "/artigos/introducao-xrpl.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "tutorial",
+      "testnet",
+      "transacao"
+    ]
+  },
+  {
+    "title": "Carteiras XRP: custodia e seguranca",
+    "description": "Como escolher carteiras, proteger frase semente e configurar multassinatura.",
+    "url": "/artigos/carteiras-xrp.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "carteiras",
+      "custodia",
+      "multisig"
+    ]
+  },
+  {
+    "title": "AMM e DEX nativa na XRPL",
+    "description": "Visao completa sobre pools de liquidez, LP tokens e riscos do AMM.",
+    "url": "/artigos/amm-dex-xrpl.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "amm",
+      "dex",
+      "liquidez"
+    ]
+  },
+  {
+    "title": "Stablecoins na XRPL",
+    "description": "Analise dos stablecoins suportados, emissao, colateral e casos de uso.",
+    "url": "/artigos/stablecoins-xrpl.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "stablecoin",
+      "rlusd",
+      "usd"
+    ]
+  },
+  {
+    "title": "ISO 20022 e XRP",
+    "description": "Como a XRPL conversa com o padrao ISO 20022 e oportunidades para pagamentos globais.",
+    "url": "/artigos/iso20022-xrpl.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "iso20022",
+      "pagamentos",
+      "padrao"
+    ]
+  },
+  {
+    "title": "SEC vs Ripple",
+    "description": "Resumo do processo regulatorio, principais decisoes e implicacoes para o XRP.",
+    "url": "/artigos/sec-vs-ripple-xrp.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "sec",
+      "processo",
+      "regulacao"
+    ]
+  },
+  {
+    "title": "Ferramentas XRPL",
+    "description": "Lista curada de exploradores, carteiras, dashboards e utilitarios para XRPL.",
+    "url": "/ferramentas/index.html",
+    "category": "Ferramentas",
+    "keywords": [
+      "xrp",
+      "explorador",
+      "dashboard",
+      "utilitario"
+    ]
+  },
+  {
+    "title": "Glossario XRPL",
+    "description": "Definicoes de termos tecnicos como AMM, DEX, ledger e UNL.",
+    "url": "/glossario/index.html",
+    "category": "Referencias",
+    "keywords": [
+      "xrp",
+      "glossario",
+      "definicao",
+      "termos"
+    ]
+  },
+  {
+    "title": "Atualizacao semanal",
+    "description": "Resumo dos principais eventos XRP, RLUSD e ETFs na semana.",
+    "url": "/artigos/atualizacao-semanal.html",
+    "category": "Atualizacoes",
+    "keywords": [
+      "xrp",
+      "semana",
+      "etf",
+      "rlusd"
+    ]
+  },
+  {
+    "title": "Seguranca na XRPL",
+    "description": "Check-list de protecao, golpes comuns e configuracoes essenciais.",
+    "url": "/artigos/seguranca-xrp-xrpl.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "seguranca",
+      "golpes",
+      "protecao"
+    ]
+  },
+  {
+    "title": "Projetos brasileiros na XRPL",
+    "description": "Mapa dos projetos nacionais que utilizam a rede e os casos de uso locais.",
+    "url": "/artigos/projetos-brasileiros-xrpl.html",
+    "category": "Artigos",
+    "keywords": [
+      "xrp",
+      "brasil",
+      "projetos",
+      "casos de uso"
+    ]
+  }
+]
