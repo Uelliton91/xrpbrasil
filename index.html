@@ -52,6 +52,7 @@
         <a href="/artigos/historia-xrp-xrpl.html">História</a>
         <a href="/artigos/index.html">Artigos</a>
         <a href="/ferramentas/index.html">Ferramentas</a>
+        <a href="/metricas/">Métricas</a>
         <a href="/glossario/index.html">Glossário</a>
         <a href="/pages/sobre.html">Sobre</a>
       </nav>
@@ -65,6 +66,12 @@
           <p class="lead">Conteúdo claro, didático e em português do Brasil. Sem promessas de lucro. Sem ruído. Apenas a tecnologia que move pagamentos globais em tempo real.</p>
           <div class="cta">
             <a class="btn primary" href="/pages/guia.html">Começar pelo Guia</a>
+          </div>
+          <div class="hero-price-card">
+            <p class="label">Preço spot do XRP</p>
+            <strong data-metric="price-brl-home">Carregando...</strong>
+            <span>Fonte: CoinGecko, atualização em tempo real</span>
+            <a class="btn primary" href="/metricas/">Quero saber mais</a>
           </div>
         </div>
         <div class="hero-brand">
@@ -192,6 +199,26 @@
     </footer>
 
     <script src="/assets/script.js"></script>
+    <script>
+      (function(){
+        var target=document.querySelector('[data-metric="price-brl-home"]');
+        if(!target){return;}
+        fetch('https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=brl')
+          .then(function(resp){
+            if(!resp.ok){throw new Error('Falha ao obter preço');}
+            return resp.json();
+          })
+          .then(function(data){
+            var price=data&&data.ripple&&data.ripple.brl;
+            if(typeof price==='number'){
+              target.textContent=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(price);
+            }
+          })
+          .catch(function(err){
+            console.warn('Preço home',err);
+          });
+      })();
+    </script>
 
     <script type="application/ld+json">
       {

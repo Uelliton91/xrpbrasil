@@ -45,12 +45,33 @@
 
   document.addEventListener('DOMContentLoaded',function(){
     fixEncodingArtifacts();
+    ensureMetricsLink();
     enhanceHeader();
     setupSearch();
     loadSearchIndex();
     initConsent();
     buildBreadcrumbs();
   });
+
+  function ensureMetricsLink(){
+    var nav=document.querySelector('.site-header .nav');
+    if(!nav){return;}
+    var target='/metricas/';
+    if(nav.querySelector('a[href="'+target+'"]')){return;}
+    var link=document.createElement('a');
+    link.href=target;
+    link.textContent='Métricas';
+    var tools=nav.querySelector('a[href="/ferramentas/index.html"]');
+    if(tools){
+      if(tools.nextSibling){
+        nav.insertBefore(link,tools.nextSibling);
+      }else{
+        nav.appendChild(link);
+      }
+    }else{
+      nav.appendChild(link);
+    }
+  }
 
   function fixEncodingArtifacts(){
     if(!document.body){return;}
