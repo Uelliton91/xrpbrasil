@@ -51,6 +51,7 @@
     loadSearchIndex();
     initConsent();
     buildBreadcrumbs();
+    injectSharePrompt();
   });
 
   function ensureMetricsLink(){
@@ -368,5 +369,46 @@
       return '<span class="breadcrumbs__current">'+crumb.label+'</span>';
     }).join(' ');
     main.insertBefore(trail,main.firstChild);
+  }
+
+  function injectSharePrompt(){
+    var path=(window.location&&window.location.pathname)||'';
+    if(path.indexOf('/artigos/')!==0){return;}
+    if(path==='/artigos'||path==='/artigos/'){return;}
+    if(path.endsWith('/index.html')){return;}
+    var main=document.querySelector('main');
+    if(!main){return;}
+    if(main.querySelector('.share-cta')){return;}
+    var shareSection=document.createElement('section');
+    shareSection.className='share-cta';
+    shareSection.innerHTML='\
+      <h2>Compartilhe com algu&eacute;m que precisa saber disso</h2>\
+      <p>Copie o link e envie por WhatsApp, Telegram ou email para continuar a conversa.</p>\
+      <div class="share-cta__actions">\
+        <button type="button" class="btn primary share-cta__button" data-share-copy>Copiar link</button>\
+      </div>';
+    var dateEl=main.querySelector('.article-date');
+    if(dateEl){
+      main.insertBefore(shareSection,dateEl);
+    }else{
+      main.appendChild(shareSection);
+    }
+    var button=shareSection.querySelector('[data-share-copy]');
+    if(button){
+      button.setAttribute('data-copy',computeShareUrl());
+      button.removeAttribute('data-share-copy');
+    }
+  }
+
+  function computeShareUrl(){
+    if(!window||!window.location){return '';}
+    var href=window.location.href||'';
+    if(href && href.indexOf('file:')!==0){return href;}
+    var origin=(window.location.origin && window.location.origin!=='null')?window.location.origin:'';
+    if(origin){return origin+window.location.pathname+window.location.search;}
+    if(window.location.protocol && window.location.host){
+      return window.location.protocol+'//'+window.location.host+window.location.pathname+window.location.search;
+    }
+    return window.location.pathname+window.location.search;
   }
 })();
