@@ -53,8 +53,9 @@
     </header>
 
     <main class="container">
-      <h1 id="como-funciona-a-xrpl">Como funciona a XRPL</h1>
+      <h1 id="como-funciona-a-xrpl">XRPL explicada: como funciona a XRP Ledger</h1>
       <p>A XRP Ledger (XRPL) é uma rede de pagamentos pública, sem permissão e com liquidação em ~3–5 segundos. Ela foi desenhada para ser um <strong>livro-razão global de pagamentos</strong>, com recursos nativos de câmbio, emissão de ativos, AMM e NFTs.</p>
+      <p>Quer uma visão rápida? Veja <a href="/pages/o-que-e-xrpl.html">o que é a XRPL</a> ou o <a href="/pages/xrpl-passo-a-passo.html">XRPL passo a passo</a>.</p>
       <p>Esta página é um mapa mental: não substitui a documentação oficial, mas ajuda a entender as peças principais antes de mergulhar no código.</p>
 
       <h2>Contas e chaves</h2>
@@ -120,12 +121,57 @@
         <li>História da rede: <a href="/artigos/historia-xrp-xrpl.html">História do XRP/XRPL</a>.</li>
       </ul>
 
+      <section class="faq" id="faq">
+        <div>
+          <p class="kicker">FAQ</p>
+          <h2>Perguntas frequentes</h2>
+          <p class="lead">Dúvidas comuns sobre a XRP Ledger.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>XRPL é a mesma coisa que Ripple?</h3>
+            <p>Não. XRPL é a rede pública; Ripple é a empresa que contribui com o ecossistema.</p>
+          </article>
+          <article class="faq-item">
+            <h3>As taxas são altas?</h3>
+            <p>Não. As taxas na XRPL são muito baixas e pagas em XRP.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Preciso de XRP para usar a rede?</h3>
+            <p>Sim. Toda conta precisa manter uma reserva mínima em XRP para existir.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="notice">
         <p>Este texto simplifica diversos detalhes técnicos. Para especificações completas e exemplos de código, consulte a documentação oficial em <a href="https://xrpl.org/" target="_blank" rel="noopener">xrpl.org</a>.</p>
       </section>
     </main>
     <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
     <script src="/assets/script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "XRPL é a mesma coisa que Ripple?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Não. XRPL é a rede pública; Ripple é a empresa que contribui com o ecossistema."}
+          },
+          {
+            "@type": "Question",
+            "name": "As taxas são altas?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Não. As taxas na XRPL são muito baixas e pagas em XRP."}
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso de XRP para usar a rede?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Sim. Toda conta precisa manter uma reserva mínima em XRP para existir."}
+          }
+        ]
+      }
+    </script>
   </body>
   </html>
 
