@@ -21,3 +21,6 @@ atomsconsoledb.sqlite3
 debug_bin
 .vuuchas
 vue.config.js
+.codex
+download.bin
+share_page.js
