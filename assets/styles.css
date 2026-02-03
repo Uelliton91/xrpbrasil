@@ -103,6 +103,20 @@ section{margin:28px 0}
 .ebook-visual-group{display:flex;flex-direction:column;gap:16px;align-items:flex-start;align-self:start}
 .ebook-visual{display:block;width:100%;max-width:520px;justify-self:start}
 .ebook-visual img{display:block;width:100%;height:auto;border-radius:12px}
+.ebook-visual--swap{position:relative;display:block}
+.ebook-visual--swap .ebook-visual__img{display:block;width:100%;height:auto;border-radius:12px;animation:ebookSwapCover 12s ease-in-out infinite}
+.ebook-visual--swap .ebook-visual__img--page{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;z-index:2;animation-name:ebookSwapPage;animation-duration:12s}
+.ebook-visual--swap .ebook-visual__img--cover{position:relative;z-index:1}
+@keyframes ebookSwapCover{
+  0%,45%{opacity:1}
+  50%,95%{opacity:0}
+  100%{opacity:1}
+}
+@keyframes ebookSwapPage{
+  0%,45%{opacity:0}
+  50%,95%{opacity:1}
+  100%{opacity:0}
+}
 .ebook-info{display:flex;flex-direction:column;gap:16px;align-items:flex-start;align-self:start;padding-top:clamp(40px,8vw,96px)}
 .ebook-copy h1{margin:0 0 8px}
 .ebook-subtitle{margin:0;color:var(--muted);font-size:21px}
@@ -124,6 +138,10 @@ section{margin:28px 0}
   .ebook-details{max-width:100%}
   .ebook-specs{grid-template-columns:1fr}
   .ebook-subtitle{font-size:19px}
+}
+@media (prefers-reduced-motion: reduce){
+  .ebook-visual--swap .ebook-visual__img{animation:none}
+  .ebook-visual--swap .ebook-visual__img--page{display:none}
 }
 .article-date{margin:20px 0 0;color:var(--muted);font-size:12px;letter-spacing:.02em}
 .article-cover{margin:16px auto 22px;max-width:240px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:rgba(0,0,0,.2)}
