@@ -9,3 +9,6 @@ id = "2413cfec271e438785a1ce704c3b8676"
 preview_id = "e58da4b00f0c40a9934cd35b7aaa5103"
 
 [env.production]
+kv_namespaces = [
+  { binding = "EXCHANGE_HISTORY", id = "2413cfec271e438785a1ce704c3b8676" }
+]
