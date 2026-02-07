@@ -3,6 +3,7 @@ const XRPL_ENDPOINTS = [
   'https://s2.ripple.com:51234'
 ];
 const XRPSCAN_WELLKNOWN = 'https://api.xrpscan.com/api/v1/names/well-known';
+const XRPSCAN_BALANCES = 'https://api.xrpscan.com/api/v1/balances';
 const CACHE_SECONDS = 3600;
 const MAX_SUBREQUESTS = 45;
 const MAX_PER_EXCHANGE = 8;
@@ -59,44 +60,71 @@ export async function onRequestGet({ request, env }) {
       return b.addresses.length - a.addresses.length;
     });
 
-    const tasks = [];
-    const exchangeMeta = [];
-    const totalAccounts = exchangeEntries.reduce((sum, entry) => sum + entry.addresses.length, 0);
-    for (const entry of exchangeEntries) {
-      exchangeMeta.push({ key: entry.key, name: entry.name, addresses: entry.addresses.length });
-      const limitedAddresses = entry.addresses.slice(0, MAX_PER_EXCHANGE);
-      for (const address of limitedAddresses) {
-        if (tasks.length >= MAX_SUBREQUESTS) break;
-        tasks.push({ key: entry.key, address });
-      }
-      if (tasks.length >= MAX_SUBREQUESTS) break;
+    const totals = {};
+    const sampled = {};
+    let matchedAccounts = 0;
+    let usedBalances = false;
+
+    try {
+      const balances = await fetchBalances();
+      const accountToKey = new Map();
+      exchangeEntries.forEach((entry) => {
+        entry.addresses.forEach((addr) => accountToKey.set(addr, entry.key));
+      });
+      balances.forEach((row) => {
+        const key = accountToKey.get(row.account);
+        if (!key) return;
+        const balance = Number(row.balance);
+        if (!Number.isFinite(balance)) return;
+        totals[key] = (totals[key] || 0) + balance / 1000000;
+        sampled[key] = (sampled[key] || 0) + 1;
+        matchedAccounts += 1;
+      });
+      usedBalances = true;
+    } catch (err) {
+      // fall back to limited account_info sampling below
     }
 
-    const truncated = tasks.length < totalAccounts;
-    const limitedTasks = tasks;
+    if (!usedBalances) {
+      const tasks = [];
+      const totalAccounts = exchangeEntries.reduce((sum, entry) => sum + entry.addresses.length, 0);
+      for (const entry of exchangeEntries) {
+        const limitedAddresses = entry.addresses.slice(0, MAX_PER_EXCHANGE);
+        for (const address of limitedAddresses) {
+          if (tasks.length >= MAX_SUBREQUESTS) break;
+          tasks.push({ key: entry.key, address });
+        }
+        if (tasks.length >= MAX_SUBREQUESTS) break;
+      }
 
-    const totals = {};
-    await mapLimit(limitedTasks, 8, async (task) => {
-      const balance = await fetchAccountBalance(task.address);
-      totals[task.key] = (totals[task.key] || 0) + balance;
-    });
+      await mapLimit(tasks, 8, async (task) => {
+        const balance = await fetchAccountBalance(task.address);
+        totals[task.key] = (totals[task.key] || 0) + balance;
+        sampled[task.key] = (sampled[task.key] || 0) + 1;
+      });
 
-    const results = exchangeMeta.map((meta) => ({
+      matchedAccounts = tasks.length;
+    }
+
+    const results = exchangeEntries.map((meta) => ({
       name: meta.name,
       xrp: roundXrp(totals[meta.key] || 0),
       addresses: meta.addresses
     })).sort((a, b) => b.xrp - a.xrp);
 
     const totalXrp = results.reduce((sum, item) => sum + item.xrp, 0);
+    const totalAccounts = exchangeEntries.reduce((sum, entry) => sum + entry.addresses.length, 0);
+    const truncated = matchedAccounts < totalAccounts;
     const history = await updateHistory(env && env.EXCHANGE_HISTORY, totalXrp);
     const payload = {
       updatedAt: new Date().toISOString(),
       totalXrp: roundXrp(totalXrp),
       exchanges: results,
-      sampledAccounts: limitedTasks.length,
+      sampledAccounts: matchedAccounts,
       totalAccounts,
       truncated,
       mode,
+      source: usedBalances ? 'xrpscan-balances' : 'xrpl-account-info',
       history
     };
 
@@ -145,6 +173,15 @@ async function fetchWellKnown() {
   const response = await fetch(XRPSCAN_WELLKNOWN);
   if (!response.ok) {
     throw new Error('Falha ao obter lista XRPSCAN.');
+  }
+  const data = await response.json();
+  return Array.isArray(data) ? data : [];
+}
+
+async function fetchBalances() {
+  const response = await fetch(XRPSCAN_BALANCES);
+  if (!response.ok) {
+    throw new Error('Falha ao obter saldos XRPSCAN.');
   }
   const data = await response.json();
   return Array.isArray(data) ? data : [];
