@@ -4,7 +4,13 @@ const XRPL_ENDPOINTS = [
 ];
 const XRPSCAN_WELLKNOWN = 'https://api.xrpscan.com/api/v1/names/well-known';
 const CACHE_SECONDS = 3600;
-const MAX_ACCOUNTS = 400;
+const MAX_SUBREQUESTS = 45;
+const MAX_PER_EXCHANGE = 8;
+const PRIORITY_EXCHANGES = [
+  'binance', 'coinbase', 'bitstamp', 'kraken', 'bitfinex', 'bybit', 'okx',
+  'kucoin', 'gate.io', 'gateio', 'crypto.com', 'bitget', 'bitbank', 'bithumb',
+  'upbit', 'bitso', 'coincheck'
+];
 const DEFAULT_KEYWORDS = [
   'binance', 'coinbase', 'bitstamp', 'kraken', 'bitfinex', 'upbit', 'bithumb',
   'okx', 'okex', 'bybit', 'kucoin', 'gate.io', 'gateio', 'huobi', 'htx',
@@ -37,18 +43,37 @@ export async function onRequestGet({ request, env }) {
     const grouped = groupExchangeAccounts(xrpscanList, keywordSet, ignoreSet, mode);
     applyManualAddresses(grouped, config.manual, ignoreSet);
 
+    const exchangeEntries = Array.from(grouped.entries()).map(([key, entry]) => ({
+      key,
+      name: entry.name,
+      addresses: Array.from(entry.addresses)
+    }));
+    exchangeEntries.sort((a, b) => {
+      const aPriority = PRIORITY_EXCHANGES.findIndex((term) => a.key.includes(term));
+      const bPriority = PRIORITY_EXCHANGES.findIndex((term) => b.key.includes(term));
+      if (aPriority !== -1 || bPriority !== -1) {
+        if (aPriority === -1) return 1;
+        if (bPriority === -1) return -1;
+        if (aPriority !== bPriority) return aPriority - bPriority;
+      }
+      return b.addresses.length - a.addresses.length;
+    });
+
     const tasks = [];
     const exchangeMeta = [];
-    for (const [key, entry] of grouped.entries()) {
-      const addresses = Array.from(entry.addresses);
-      exchangeMeta.push({ key, name: entry.name, addresses: addresses.length });
-      addresses.forEach((address) => {
-        tasks.push({ key, address });
-      });
+    const totalAccounts = exchangeEntries.reduce((sum, entry) => sum + entry.addresses.length, 0);
+    for (const entry of exchangeEntries) {
+      exchangeMeta.push({ key: entry.key, name: entry.name, addresses: entry.addresses.length });
+      const limitedAddresses = entry.addresses.slice(0, MAX_PER_EXCHANGE);
+      for (const address of limitedAddresses) {
+        if (tasks.length >= MAX_SUBREQUESTS) break;
+        tasks.push({ key: entry.key, address });
+      }
+      if (tasks.length >= MAX_SUBREQUESTS) break;
     }
 
-    const truncated = tasks.length > MAX_ACCOUNTS;
-    const limitedTasks = tasks.slice(0, MAX_ACCOUNTS);
+    const truncated = tasks.length < totalAccounts;
+    const limitedTasks = tasks;
 
     const totals = {};
     await mapLimit(limitedTasks, 8, async (task) => {
@@ -69,7 +94,7 @@ export async function onRequestGet({ request, env }) {
       totalXrp: roundXrp(totalXrp),
       exchanges: results,
       sampledAccounts: limitedTasks.length,
-      totalAccounts: tasks.length,
+      totalAccounts,
       truncated,
       mode,
       history
