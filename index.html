@@ -247,7 +247,7 @@
           });
 
         if(targetExchange){
-          fetch('/api/exchange-balances?v=5')
+          fetch('/api/exchange-balances?v=6')
             .then(function(resp){
               if(!resp.ok){throw new Error('Falha ao obter exchanges');}
               return resp.json();

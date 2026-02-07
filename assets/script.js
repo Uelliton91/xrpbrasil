@@ -708,10 +708,11 @@
         }
       });
       var html=selected.slice(0,4).map(function(item){
+        var addressCount=Array.isArray(item.addresses)?item.addresses.length:Number(item.addresses||0);
         return '<article class="activity-kpi activity-kpi--compact">'+
           '<p class="label">'+item.name+'</p>'+
           '<h2>'+formatXrp(item.xrp)+'</h2>'+
-          '<p class="muted">'+item.addresses+' carteiras</p>'+
+          '<p class="muted">'+addressCount+' carteiras</p>'+
         '</article>';
       }).join('');
       listEl.innerHTML=html;
@@ -757,7 +758,7 @@
 
     function load(){
       var isLocal=location.hostname==='localhost'||location.hostname==='127.0.0.1';
-      var primary='/api/exchange-balances?v=5';
+      var primary='/api/exchange-balances?v=6';
       var fallback='/data/exchange-balances-sample.json';
       var fetchJsonLocal=function(url){
         return fetch(url).then(function(resp){

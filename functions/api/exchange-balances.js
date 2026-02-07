@@ -109,7 +109,7 @@ export async function onRequestGet({ request, env }) {
     const results = exchangeEntries.map((meta) => ({
       name: meta.name,
       xrp: roundXrp(totals[meta.key] || 0),
-      addresses: meta.addresses
+      addresses: meta.addresses.length
     })).sort((a, b) => b.xrp - a.xrp);
 
     const totalXrp = results.reduce((sum, item) => sum + item.xrp, 0);
