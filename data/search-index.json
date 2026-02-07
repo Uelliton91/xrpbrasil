@@ -194,5 +194,18 @@
       "projetos",
       "casos de uso"
     ]
+  },
+  {
+    "title": "E-book tecnico: como o XRPL reconecta mensagens e valor",
+    "description": "Pagina oficial do e-book tecnico com foco em liquidacao, interoperabilidade e transmissao de valor na XRPL.",
+    "url": "/ebook/",
+    "category": "E-book",
+    "keywords": [
+      "ebook",
+      "xrpl",
+      "xrp",
+      "liquidacao",
+      "conhecimento"
+    ]
   }
 ]

@@ -1,0 +1,179 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rastreador de Atividade XRPL | XRP BRASIL</title>
+    <meta name="description" content="Dashboard em tempo real para entender se a rede XRPL esta mais ou menos utilizada." />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="XRP BRASIL" />
+    <link rel="canonical" href="https://xrpbrasil.com.br/pages/rastreador-xrpl.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="XRP BRASIL" />
+    <meta property="og:title" content="Rastreador de Atividade XRPL" />
+    <meta property="og:description" content="Dashboard em tempo real para entender se a rede XRPL esta mais ou menos utilizada." />
+    <meta property="og:url" content="https://xrpbrasil.com.br/pages/rastreador-xrpl.html" />
+    <meta property="og:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Brasil_Xrp" />
+    <meta name="twitter:title" content="Rastreador de Atividade XRPL" />
+    <meta name="twitter:description" content="Dashboard em tempo real para entender se a rede XRPL esta mais ou menos utilizada." />
+    <meta name="twitter:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <nav class="nav">
+        <a href="/pages/guia.html">Guia</a>
+        <a href="/pages/xrpl.html">XRPL</a>
+        <a href="/artigos/historia-xrp-xrpl.html">Historia</a>
+        <a href="/artigos/index.html">Artigos</a>
+        <a href="/ebook/">E-book</a>
+        <a href="/ferramentas/index.html">Ferramentas</a>
+        <a href="/metricas/">Metricas</a>
+        <a href="/glossario/index.html">Glossario</a>
+        <a href="/pages/sobre.html">Sobre</a>
+      </nav>
+    </header>
+
+    <main class="container" data-activity-tracker>
+      <section class="activity-hero">
+        <div class="activity-hero__copy">
+          <p class="kicker">Rastreador</p>
+          <h1>DEX XRPL - Painel em tempo real</h1>
+          <p class="lead">Monitoramento do DEX nativo • Atualiza a cada 60s • Fonte: DefiLlama + XRPL Node</p>
+          <p class="activity-tagline">Volume, liquidez e atividade economica real do ledger em um painel unico.</p>
+          <p class="activity-justification">Com a evolucao do XRPL e a adocao de melhorias como o XLS-81, a DEX nativa tende a ganhar mais relevancia e volume. Este painel acompanha a atividade economica do ledger para identificar picos de volume, mudancas de liquidez e sinais extraordinarios.</p>
+        </div>
+        <div class="activity-status">
+          <p class="label">Status <span class="status-badge" data-status-badge>Online</span></p>
+          <strong data-activity-status>Carregando...</strong>
+          <p class="activity-status__metric">
+            Volume 24h vs media 30 dias:
+            <strong data-activity-index>--</strong>
+            <span data-activity-delta>--</span>
+          </p>
+          <p class="activity-status__interpretation" data-activity-interpretation>--</p>
+          <div class="activity-index">
+            <div class="activity-gauge">
+              <svg class="activity-gauge__svg" viewBox="0 0 200 120" role="img" aria-label="Indicador de volume vs media 30d">
+                <path class="activity-gauge__track" d="M 20 100 A 80 80 0 0 1 180 100" />
+                <path class="activity-gauge__fill" data-activity-gauge-fill d="M 20 100 A 80 80 0 0 1 180 100" />
+                <line class="activity-gauge__needle" data-activity-gauge-needle x1="100" y1="100" x2="100" y2="24" />
+                <circle class="activity-gauge__pivot" cx="100" cy="100" r="5" />
+              </svg>
+              <div class="activity-gauge__labels">
+                <span>Baixa</span>
+                <span>Alta</span>
+              </div>
+            </div>
+            <div class="activity-index__bar">
+              <span data-activity-index-bar></span>
+            </div>
+            <p class="activity-index__note">Valor em X indica quantos dias de volume medio foram negociados hoje.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="activity-kpis">
+        <article class="activity-kpi">
+          <p class="label">Volume DEX (24h)</p>
+          <h2 data-activity-dex>--</h2>
+          <p class="muted">Volume total DEX da XRPL em USD.</p>
+          <p class="kpi-delta" data-activity-delta-24>--</p>
+        </article>
+        <article class="activity-kpi">
+          <p class="label">Volume 7 dias</p>
+          <h2 data-activity-7d>--</h2>
+          <p class="muted" data-activity-7d-delta>Comparado a media 30d</p>
+          <p class="kpi-delta" data-activity-delta-7>--</p>
+        </article>
+        <article class="activity-kpi">
+          <p class="label">Volume 30 dias</p>
+          <h2 data-activity-30d>--</h2>
+          <p class="muted">Referencia de media 30d.</p>
+          <p class="kpi-delta" data-activity-delta-30>--</p>
+        </article>
+      </section>
+
+      <section class="insights">
+        <div class="insights__card">
+          <p class="insights__kicker">💡 Insight do Dia</p>
+          <p data-activity-insight>Carregando...</p>
+          <button class="btn ghost insights__share-btn" type="button" data-insight-share>Compartilhar</button>
+        </div>
+      </section>
+
+      <section class="exchange-tracker" data-exchange-tracker>
+        <div class="exchange-tracker__header">
+          <div class="exchange-tracker__title">
+            <h2>Saldo de XRP em corretoras <button class="info-pill info-pill--inline" type="button" aria-label="Como ler esta estimativa" title="Estimativa baseada em carteiras conhecidas de corretoras (XRPSCAN). Soma apenas XRP on-chain (nao inclui ativos emitidos).">i</button></h2>
+          </div>
+          <span class="status-badge" data-exchange-status>Online</span>
+        </div>
+        <div class="exchange-tracker__total">
+          <div class="exchange-tracker__label">
+            <p class="label">Total estimado</p>
+            <button class="info-pill info-pill--inline" type="button" aria-label="Como ler o total estimado" title="Total baseado em carteiras operacionais (hot) rotuladas como exchanges.">
+              i
+            </button>
+            <span class="mode-pill">Liquidez (hot)</span>
+          </div>
+          <h2 class="exchange-tracker__value" data-exchange-total>--</h2>
+          <p class="muted" data-exchange-delta-7>--</p>
+          <p class="muted" data-exchange-delta-30>--</p>
+        </div>
+        <button class="btn ghost exchange-tracker__share" type="button" data-exchange-share>Compartilhar</button>
+        <div class="exchange-tracker__grid" data-exchange-list>
+          <span class="muted">Carregando...</span>
+        </div>
+        <p class="exchange-tracker__note muted">
+          Atualiza a cada 60 min. Fonte: XRPSCAN + XRPL nodes (modo liquidez).
+        </p>
+        <p class="exchange-tracker__updated muted" data-exchange-updated>--</p>
+      </section>
+
+      <section class="activity-chart-card">
+        <div class="activity-chart-panel">
+          <p class="label">Volume DEX (30d)</p>
+          <div class="activity-chart-controls">
+            <button type="button" class="btn ghost" data-chart-range="30">30d</button>
+            <button type="button" class="btn ghost is-active" data-chart-range="7">7d</button>
+          </div>
+          <div class="activity-chart" data-activity-chart>
+            <span class="muted">Carregando grafico...</span>
+          </div>
+        </div>
+        <div class="activity-trend">
+          <p class="label">Tendencia</p>
+          <h3 data-activity-trend>--</h3>
+          <p class="muted">Comparacao entre media 7d atual e 7d anterior.</p>
+        </div>
+      </section>
+
+      <section class="activity-meta">
+        <p class="muted">Atualizado em <strong data-activity-updated>--</strong></p>
+        <p class="muted">Media diaria 30d: <strong data-activity-avg30>--</strong></p>
+      </section>
+
+      <section class="notice">
+        <p class="notice-title">ℹ️ Sobre os dados</p>
+        <ul class="notice-list">
+          <li>DEX Nativo: ordens executadas diretamente no ledger XRPL.</li>
+          <li>Volume: soma dos trades (TakerGets + TakerPays).</li>
+          <li>Atualizacao: dados da DefiLlama + processamento local.</li>
+          <li>Atraso maximo: &lt; 2 minutos do trade real.</li>
+        </ul>
+      </section>
+
+      
+    </main>
+
+    <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL</p></footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+    <script src="/assets/script.js"></script>
+  </body>
+</html>

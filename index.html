@@ -33,8 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" href="/assets/favicon.svg" />
     <link rel="stylesheet" href="/assets/styles.css" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6769888742388798" crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTPCXTQRF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -68,11 +67,39 @@
           <div class="cta">
             <a class="btn primary" href="/pages/guia.html">Começar pelo Guia</a>
           </div>
-          <div class="hero-price-card">
-            <p class="label">Preço spot do XRP</p>
-            <strong data-metric="price-brl-home">Carregando...</strong>
-            <span>Fonte: CoinGecko, atualização em tempo real</span>
-            <a class="btn primary" href="/metricas/">Quero saber mais</a>
+          <div class="hero-spot-cards">
+            <div class="hero-price-card">
+              <p class="label">Preço spot do XRP</p>
+              <strong data-metric="price-brl-home">Carregando...</strong>
+              <span class="hero-price-secondary" data-metric="price-usd-home">US$ --</span>
+              <div class="hero-exchange-balance">
+                <span class="hero-exchange-label">Saldo em corretoras:</span>
+                <strong class="hero-exchange-value" data-metric="xrp-exchange-hot">--</strong>
+              </div>
+              <span>Fonte: CoinGecko, atualização em tempo real</span>
+              <a class="btn primary" href="/metricas/">Quero saber mais</a>
+            </div>
+            <div class="hero-price-card hero-dex-card">
+              <p class="label">DEX XRPL</p>
+              <div class="hero-dex-status">
+                <span class="status-badge" data-home-dex-badge>Online</span>
+                <strong data-home-dex-status>Carregando...</strong>
+              </div>
+              <div class="hero-dex-gauge">
+                <svg class="mini-gauge" viewBox="0 0 200 120" role="img" aria-label="Status da atividade DEX">
+                  <path class="mini-gauge__track" d="M 20 100 A 80 80 0 0 1 180 100" />
+                  <path class="mini-gauge__fill" data-home-dex-gauge-fill d="M 20 100 A 80 80 0 0 1 180 100" />
+                  <line class="mini-gauge__needle" data-home-dex-gauge-needle x1="100" y1="100" x2="100" y2="24" />
+                  <circle class="mini-gauge__pivot" cx="100" cy="100" r="5" />
+                </svg>
+                <div class="mini-gauge__labels">
+                  <span>Baixa</span>
+                  <span>Alta</span>
+                </div>
+              </div>
+              <span>Volume, liquidez e atividade do DEX nativo.</span>
+              <a class="btn primary" href="/pages/rastreador-xrpl.html">Ver painel DEX</a>
+            </div>
           </div>
         </div>
         <div class="hero-brand">
@@ -149,7 +176,7 @@
           <p style="margin:0;color:var(--muted)">Aprenda os conceitos de blockchain por tr&aacute;s da revolu&ccedil;&atilde;o no setor financeiro &mdash; com exemplos reais e arquitetura explicada.</p>
         </div>
         <div class="ebook-callout__media" style="grid-column:2;grid-row:1 / 4;align-self:start;margin-right:44px">
-          <img class="ebook-callout__mockup" src="/assets/ebook-mockup.png" alt="Mockup do e-book técnico sobre XRP Ledger" loading="lazy" style="width:144px !important;max-width:144px !important;height:auto;display:block" />
+          <img class="ebook-callout__mockup" src="/assets/ebook-mockup.png" alt="Mockup do e-book t&eacute;cnico sobre XRP Ledger" loading="lazy" style="width:144px !important;max-width:144px !important;height:auto;display:block" />
         </div>
       </section>
 
@@ -197,21 +224,44 @@
     <script>
       (function(){
         var target=document.querySelector('[data-metric="price-brl-home"]');
+        var targetUsd=document.querySelector('[data-metric="price-usd-home"]');
+        var targetExchange=document.querySelector('[data-metric="xrp-exchange-hot"]');
         if(!target){return;}
-        fetch('https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=brl')
+        fetch('https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=brl,usd')
           .then(function(resp){
             if(!resp.ok){throw new Error('Falha ao obter preço');}
             return resp.json();
           })
           .then(function(data){
             var price=data&&data.ripple&&data.ripple.brl;
+            var priceUsd=data&&data.ripple&&data.ripple.usd;
             if(typeof price==='number'){
               target.textContent=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(price);
+            }
+            if(targetUsd && typeof priceUsd==='number'){
+              targetUsd.textContent=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(priceUsd);
             }
           })
           .catch(function(err){
             console.warn('Preço home',err);
           });
+
+        if(targetExchange){
+          fetch('/api/exchange-balances?v=4')
+            .then(function(resp){
+              if(!resp.ok){throw new Error('Falha ao obter exchanges');}
+              return resp.json();
+            })
+            .then(function(data){
+              if(data && typeof data.totalXrp==='number'){
+                var formatted='XRP '+new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionDigits:2}).format(data.totalXrp);
+                targetExchange.textContent=formatted;
+              }
+            })
+            .catch(function(err){
+              console.warn('Exchange home',err);
+            });
+        }
       })();
     </script>
 
@@ -270,3 +320,6 @@
     </script>
   </body>
   </html>
+
+
+

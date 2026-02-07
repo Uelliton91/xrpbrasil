@@ -1,0 +1,25 @@
+{
+  "updatedAt": "2026-02-07T10:00:00.000Z",
+  "totalXrp": 1520000000,
+  "exchanges": [
+    { "name": "Binance", "xrp": 420000000, "addresses": 8 },
+    { "name": "Coinbase", "xrp": 210000000, "addresses": 5 },
+    { "name": "Bitstamp", "xrp": 170000000, "addresses": 4 },
+    { "name": "Kraken", "xrp": 140000000, "addresses": 3 },
+    { "name": "Upbit", "xrp": 120000000, "addresses": 3 },
+    { "name": "Bitso", "xrp": 90000000, "addresses": 2 }
+  ],
+  "sampledAccounts": 25,
+  "totalAccounts": 25,
+  "truncated": false,
+  "history": {
+    "baseline7Date": "2026-01-31",
+    "baseline7Xrp": 1580000000,
+    "delta7Xrp": -60000000,
+    "delta7Pct": -3.8,
+    "baseline30Date": "2026-01-08",
+    "baseline30Xrp": 1620000000,
+    "delta30Xrp": -100000000,
+    "delta30Pct": -6.2
+  }
+}
