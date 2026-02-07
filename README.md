@@ -21,6 +21,8 @@ python -m http.server 8000 --bind 0.0.0.0
 - O repositorio esta conectado ao Cloudflare Pages; cada `git push` em `main` gera um deploy automatico.
 - Para subir manualmente use o Wrangler: `wrangler pages deploy . --project-name <nome-do-projeto>`.
 - Depois do deploy, limpe o cache no painel (Caching > Purge Everything) para evitar versao antiga.
+- O rastreador de corretoras usa KV `EXCHANGE_HISTORY`. O binding ja esta no `wrangler.toml`.
+- O historico 7d/30d grava 1 ponto por dia (BRT); aparece apos alguns dias de coleta.
 
 ## Atualizacao semanal (Destaque)
 
@@ -30,7 +32,6 @@ python -m http.server 8000 --bind 0.0.0.0
 ## Seguranca
 
 - Links externos `rel="noopener"`.
-- Cabecalhos HTTP (CSP, X-Content-Type-Options, etc.) via `netlify.toml`.
 - Sem formularios/login - site estatico.
 
 ## SEO basico
