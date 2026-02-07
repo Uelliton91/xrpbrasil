@@ -757,7 +757,7 @@
 
     function load(){
       var isLocal=location.hostname==='localhost'||location.hostname==='127.0.0.1';
-      var primary='/api/exchange-balances?v=4';
+      var primary='/api/exchange-balances?v=5';
       var fallback='/data/exchange-balances-sample.json';
       var fetchJsonLocal=function(url){
         return fetch(url).then(function(resp){
