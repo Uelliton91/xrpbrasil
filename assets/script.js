@@ -688,25 +688,10 @@
         listEl.innerHTML='<span class="muted">Sem dados no momento.</span>';
         return;
       }
-      var fixed=['binance','coinbase','bitstamp','kraken'];
-      var selected=[];
-      var used=new Set();
-      fixed.forEach(function(name){
-        var match=items.find(function(item){
-          return item.name && item.name.toLowerCase().indexOf(name)>-1;
-        });
-        if(match && !used.has(match.name)){
-          selected.push(match);
-          used.add(match.name);
-        }
-      });
-      items.forEach(function(item){
-        if(selected.length>=4){return;}
-        if(!used.has(item.name)){
-          selected.push(item);
-          used.add(item.name);
-        }
-      });
+      var selected=items
+        .filter(function(item){return item && typeof item.xrp==='number' && item.xrp>0;})
+        .sort(function(a,b){return b.xrp-a.xrp;})
+        .slice(0,4);
       var html=selected.slice(0,4).map(function(item){
         var addressCount=Array.isArray(item.addresses)?item.addresses.length:Number(item.addresses||0);
         return '<article class="activity-kpi activity-kpi--compact">'+
