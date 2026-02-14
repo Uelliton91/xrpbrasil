@@ -75,6 +75,16 @@ main.container{margin-inline:auto !important;width:100%}
 .hero-price-card .btn{align-self:stretch;text-align:center;font-size:12px;padding:7px 0;margin-top:auto}
 h1{font-size:34px;line-height:1.15;margin:10px 0 8px}
 .lead{color:var(--muted);max-width:800px}
+main.container > .lead{max-width:100%}
+.container p{text-align:justify;text-justify:inter-word;hyphens:none}
+.hero p,
+.card p,
+.notice p,
+.faq p,
+.x-banner p,
+.ebook-callout p,
+.posts p,
+.site-footer p{ text-align:left; hyphens:none }
 .cta{margin-top:16px;display:flex;gap:12px}
 .btn{display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:10px;color:var(--text);text-decoration:none;transition:background .15s ease, box-shadow .15s ease, transform .15s ease}
 .btn.primary{background:linear-gradient(90deg,var(--brand-green),var(--primary));color:#05141d;border:0;font-weight:700}
