@@ -24,3 +24,10 @@ vue.config.js
 .codex
 download.bin
 share_page.js
+
+# Local/temporary artifacts
+.wrangler/
+_cf_pages_project.json
+MARKER_*.txt
+_tmp_ebook.pdf
+wrangler.toml.bak
