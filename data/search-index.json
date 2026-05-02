@@ -41,7 +41,7 @@
   },
   {
     "title": "Sobre o projeto XRP BRASIL",
-    "description": "Visao geral do portal educacional, pol&iacute;tica editorial e formas de contato.",
+    "description": "Visao geral do portal educacional, politica editorial e formas de contato.",
     "url": "/pages/sobre.html",
     "category": "Institucional",
     "keywords": [
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "title": "Hist&oacute;ria do XRP e da XRPL",
+    "title": "Historia do XRP e da XRPL",
     "description": "Linha do tempo com os principais marcos desde 2012, fundadores e evolucao da rede.",
     "url": "/artigos/historia-xrp-xrpl.html",
     "category": "Artigos",
@@ -160,15 +160,19 @@
     ]
   },
   {
-    "title": "Atualizacao semanal",
-    "description": "Resumo dos principais eventos XRP, RLUSD e ETFs na semana.",
-    "url": "/artigos/atualizacao-semanal.html",
+    "title": "XRP Ledger: Da Infraestrutura Prometida a Integracao Real",
+    "description": "De 14 de fevereiro a 30 de abril de 2026, RLUSD, DTCC/NSCC, SWIFT, ETFs e tokenizacao mostram o XRP Ledger em integracao real com o sistema financeiro.",
+    "url": "/artigos/atualizacoes/2026-05-02.html",
     "category": "Atualizacoes",
     "keywords": [
       "xrp",
-      "semana",
+      "xrpl",
+      "rlusd",
+      "dtcc",
+      "swift",
       "etf",
-      "rlusd"
+      "tokenizacao",
+      "zk"
     ]
   },
   {
