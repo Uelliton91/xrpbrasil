@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XRPL activity tracker | XRP BRASIL</title>
+    <meta name="description" content="Real-time dashboard to understand whether XRPL's native DEX and on-chain liquidity are running hotter or cooler." />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="XRP BRASIL" />
+    <link rel="canonical" href="https://xrpbrasil.com.br/en/pages/xrpl-tracker.html" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/pages/rastreador-xrpl.html" hreflang="pt-BR" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/en/pages/xrpl-tracker.html" hreflang="en" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/pages/rastreador-xrpl.html" hreflang="x-default" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="XRP BRASIL" />
+    <meta property="og:title" content="XRPL activity tracker" />
+    <meta property="og:description" content="Real-time dashboard for XRPL DEX activity, liquidity rhythm, and exchange balances." />
+    <meta property="og:url" content="https://xrpbrasil.com.br/en/pages/xrpl-tracker.html" />
+    <meta property="og:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Brasil_Xrp" />
+    <meta name="twitter:title" content="XRPL activity tracker" />
+    <meta name="twitter:description" content="Real-time dashboard for XRPL DEX activity, liquidity rhythm, and exchange balances." />
+    <meta name="twitter:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/en/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <nav class="nav">
+        <a href="/en/pages/guide.html">Guide</a>
+        <a href="/en/pages/xrpl.html">XRPL</a>
+        <a href="/en/pages/xrpl-tracker.html">Tracker</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/ebook/">E-book</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/metrics/">Metrics</a>
+        <a href="/en/glossary/">Glossary</a>
+        <a href="/en/pages/about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="container" data-activity-tracker>
+      <section class="activity-hero">
+        <div class="activity-hero__copy">
+          <p class="kicker">Tracker</p>
+          <h1>XRPL DEX - Real-time dashboard</h1>
+          <p class="lead">Native DEX monitoring - Updates every 60s - Source: DefiLlama + XRPL node</p>
+          <p class="activity-tagline">Volume, liquidity, and real economic activity from the ledger in one panel.</p>
+          <p class="activity-justification">As XRPL evolves and features such as XLS-81 gain adoption, the native DEX tends to become more relevant and more liquid. This panel follows the economic activity of the ledger to identify volume spikes, liquidity shifts, and extraordinary signals.</p>
+        </div>
+        <div class="activity-status">
+          <p class="label">Status <span class="status-badge" data-status-badge>Online</span></p>
+          <strong data-activity-status>Loading...</strong>
+          <p class="activity-status__metric">
+            24h volume vs 30-day average:
+            <strong data-activity-index>--</strong>
+            <span data-activity-delta>--</span>
+          </p>
+          <p class="activity-status__interpretation" data-activity-interpretation>--</p>
+          <div class="activity-index">
+            <div class="activity-gauge">
+              <svg class="activity-gauge__svg" viewBox="0 0 200 120" role="img" aria-label="Volume versus 30-day average indicator">
+                <path class="activity-gauge__track" d="M 20 100 A 80 80 0 0 1 180 100" />
+                <path class="activity-gauge__fill" data-activity-gauge-fill d="M 20 100 A 80 80 0 0 1 180 100" />
+                <line class="activity-gauge__needle" data-activity-gauge-needle x1="100" y1="100" x2="100" y2="24" />
+                <circle class="activity-gauge__pivot" cx="100" cy="100" r="5" />
+              </svg>
+              <div class="activity-gauge__labels">
+                <span>Low</span>
+                <span>High</span>
+              </div>
+            </div>
+            <div class="activity-index__bar">
+              <span data-activity-index-bar></span>
+            </div>
+            <p class="activity-index__note">The value in X indicates how many average daily volumes were effectively traded today.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="activity-kpis">
+        <article class="activity-kpi">
+          <p class="label">DEX volume (24h)</p>
+          <h2 data-activity-dex>--</h2>
+          <p class="muted">Total XRPL DEX volume in USD.</p>
+          <p class="kpi-delta" data-activity-delta-24>--</p>
+        </article>
+        <article class="activity-kpi">
+          <p class="label">7-day volume</p>
+          <h2 data-activity-7d>--</h2>
+          <p class="muted" data-activity-7d-delta>Compared with the 30-day average</p>
+          <p class="kpi-delta" data-activity-delta-7>--</p>
+        </article>
+        <article class="activity-kpi">
+          <p class="label">30-day volume</p>
+          <h2 data-activity-30d>--</h2>
+          <p class="muted">Reference for the rolling 30-day baseline.</p>
+          <p class="kpi-delta" data-activity-delta-30>--</p>
+        </article>
+      </section>
+
+      <section class="insights">
+        <div class="insights__card">
+          <p class="insights__kicker">&#128161; Insight of the day</p>
+          <p data-activity-insight>Loading...</p>
+        </div>
+      </section>
+
+      <section class="exchange-tracker" data-exchange-tracker>
+        <div class="exchange-tracker__header">
+          <div class="exchange-tracker__title">
+            <h2>Estimated XRP held on exchanges <button class="info-pill info-pill--inline" type="button" aria-label="How to read this estimate" title="Estimate based on known exchange wallets labeled by XRPSCAN. It sums only on-chain XRP, not issued assets.">i</button></h2>
+          </div>
+          <span class="status-badge" data-exchange-status>Online</span>
+        </div>
+        <div class="exchange-tracker__total">
+          <div class="exchange-tracker__label">
+            <p class="label">Estimated total</p>
+            <button class="info-pill info-pill--inline" type="button" aria-label="How to read the estimated total" title="Total based on labeled operational hot wallets attributed to exchanges.">
+              i
+            </button>
+            <span class="mode-pill">Hot liquidity</span>
+          </div>
+          <h2 class="exchange-tracker__value" data-exchange-total>--</h2>
+          <p class="muted" data-exchange-delta-7>--</p>
+          <p class="muted" data-exchange-delta-30>--</p>
+        </div>
+        <div class="exchange-tracker__grid" data-exchange-list>
+          <span class="muted">Loading...</span>
+        </div>
+        <p class="exchange-tracker__note muted">
+          Updates every 60 min. Source: XRPSCAN + XRPL nodes (liquidity mode).
+        </p>
+        <p class="exchange-tracker__updated muted" data-exchange-updated>--</p>
+      </section>
+
+      <section class="activity-chart-card">
+        <div class="activity-chart-panel">
+          <p class="label">DEX volume (30d)</p>
+          <div class="activity-chart-controls">
+            <button type="button" class="btn ghost" data-chart-range="30">30d</button>
+            <button type="button" class="btn ghost is-active" data-chart-range="7">7d</button>
+          </div>
+          <div class="activity-chart" data-activity-chart>
+            <span class="muted">Loading chart...</span>
+          </div>
+        </div>
+        <div class="activity-trend">
+          <p class="label">Trend</p>
+          <h3 data-activity-trend>--</h3>
+          <p class="muted">Comparison between the current 7-day average and the previous 7-day average.</p>
+        </div>
+      </section>
+
+      <section class="activity-meta">
+        <p class="muted">Updated at <strong data-activity-updated>--</strong></p>
+        <p class="muted">30-day daily average: <strong data-activity-avg30>--</strong></p>
+      </section>
+
+      <section class="notice">
+        <p class="notice-title">About the data</p>
+        <ul class="notice-list">
+          <li>Native DEX: orders executed directly inside the XRPL ledger.</li>
+          <li>Volume: the sum of executed trades across TakerGets and TakerPays legs.</li>
+          <li>Update cadence: DefiLlama data plus local processing.</li>
+          <li>Maximum delay: under 2 minutes from the underlying trade.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL - Independent educational content. <a href="/en/terms.html">Terms</a> | <a href="/en/privacy.html">Privacy</a></p></footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+    <script src="/assets/script.js?v=8"></script>
+  </body>
+</html>

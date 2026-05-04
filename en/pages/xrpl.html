@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XRPL explained: how the XRP Ledger works | XRP BRASIL</title>
+    <meta
+      name="description"
+      content="Understand accounts, consensus, DEX, AMM, fees, validators, and real-world uses of the XRP Ledger."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="XRP BRASIL" />
+    <meta name="application-name" content="XRP BRASIL" />
+    <meta name="theme-color" content="#030712" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="keywords" content="XRP, XRPL, Ripple, XRP Ledger, consensus, validators, AMM, DEX" />
+    <link rel="canonical" href="https://xrpbrasil.com.br/en/pages/xrpl.html" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/pages/xrpl.html" hreflang="pt-BR" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/en/pages/xrpl.html" hreflang="en" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/pages/xrpl.html" hreflang="x-default" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="XRP BRASIL" />
+    <meta property="og:title" content="XRPL explained: how the XRP Ledger works | XRP BRASIL" />
+    <meta
+      property="og:description"
+      content="Understand accounts, consensus, DEX, AMM, fees, validators, and real-world uses of the XRP Ledger."
+    />
+    <meta property="og:url" content="https://xrpbrasil.com.br/en/pages/xrpl.html" />
+    <meta property="og:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Brasil_Xrp" />
+    <meta name="twitter:title" content="XRPL explained: how the XRP Ledger works | XRP BRASIL" />
+    <meta
+      name="twitter:description"
+      content="Understand accounts, consensus, DEX, AMM, fees, validators, and real-world uses of the XRP Ledger."
+    />
+    <meta name="twitter:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTPCXTQRF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NHTPCXTQRF');
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/en/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <nav class="nav">
+        <a href="/en/pages/guide.html">Guide</a>
+        <a href="/en/pages/xrpl.html">XRPL</a>
+        <a href="/en/pages/xrpl-tracker.html">Tracker</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/ebook/">E-book</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/metrics/">Metrics</a>
+        <a href="/en/glossary/">Glossary</a>
+        <a href="/en/pages/about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1 id="how-xrpl-works">XRPL explained: how the XRP Ledger works</h1>
+      <p>The XRP Ledger (XRPL) is a public, permissionless payments network with settlement in roughly 3 to 5 seconds. It was built to function as a <strong>global payments ledger</strong> with native exchange, asset issuance, AMM, and NFT capabilities.</p>
+      <p>If you want a broader starting point first, read the <a href="/en/pages/guide.html">beginner's guide</a>. This page is a technical map of the main building blocks.</p>
+      <p>It does not replace official documentation, but it helps frame the moving parts before you dive into code, infrastructure, or real-world integrations.</p>
+
+      <h2>Accounts and keys</h2>
+      <p>Every XRPL account has an <strong>address</strong> (usually starting with <code>r...</code>) and is controlled by one or more <strong>cryptographic keys</strong>. Each account also needs to maintain a minimum XRP reserve, which helps prevent spam.</p>
+      <ul>
+        <li><strong>Master key</strong>: can sign any transaction and can later be disabled in favor of another key setup.</li>
+        <li><strong>Regular key</strong>: an alternate key for day-to-day usage, reducing exposure of the master key.</li>
+        <li><strong>Multi-signing</strong>: allows a transaction to require multiple signatures, such as 2 of 3.</li>
+      </ul>
+
+      <h2>Transactions</h2>
+      <p>Transactions are structured objects sent to the network. A few fields matter a lot:</p>
+      <ul>
+        <li><strong>Sequence</strong>: the account counter; each transaction consumes the next sequence number.</li>
+        <li><strong>Fee</strong>: a small amount of XRP that gets burned.</li>
+        <li><strong>LastLedgerSequence</strong>: the last ledger in which the transaction can be included before it expires.</li>
+      </ul>
+      <p>A transaction becomes confirmed when the ledger that includes it is <strong>validated</strong> by consensus.</p>
+
+      <h2>Native DEX and AMM</h2>
+      <p>XRPL has had an <strong>on-ledger DEX</strong> since 2012. It is based on order books for each asset pair, and those orders live directly in the ledger itself.</p>
+      <p>On top of that, the protocol now includes a <strong>native AMM</strong>. Instead of depending on complex external smart contracts, the AMM follows protocol-level rules that allow users to:</p>
+      <ul>
+        <li>create liquidity pools for asset pairs;</li>
+        <li>receive LP tokens when providing liquidity;</li>
+        <li>earn fees according to their participation;</li>
+        <li>combine AMM routes with the traditional DEX.</li>
+      </ul>
+
+      <h2>Issued assets and trustlines</h2>
+      <p>Besides XRP, XRPL allows <strong>issuers to create assets representing fiat currencies, stablecoins, credits, or real-world assets</strong>. These are often called <strong>issued currencies</strong> or <strong>IOUs</strong>.</p>
+      <ul>
+        <li><strong>Issuer</strong>: the account that creates the asset, such as USD, EUR, or RLUSD.</li>
+        <li><strong>Trustline</strong>: the trust relationship between recipient and issuer, including limits and rippling settings.</li>
+        <li><strong>Rippling</strong>: a feature that allows IOU balances to flow across connected trust relationships; it can be disabled when needed.</li>
+      </ul>
+      <p>In practice, you only receive an issued asset if you have a trustline for that issuer. Trust is local, explicit, and configurable.</p>
+
+      <h2>Pathfinding and payments</h2>
+      <p>The network's <strong>pathfinding</strong> engine can discover <strong>liquidity routes</strong> between two points by combining:</p>
+      <ul>
+        <li>AMM pools;</li>
+        <li>DEX order books;</li>
+        <li>IOUs from different issuers;</li>
+        <li>XRP itself as a bridge asset.</li>
+      </ul>
+      <p>That means a payment can begin in one issued asset and end in another, while the ledger automatically chooses the best route available at that moment.</p>
+
+      <h2>Consensus and validators</h2>
+      <p>XRPL uses its own consensus mechanism built around <strong>independent validators</strong>. Each server operator chooses a <strong>Unique Node List (UNL)</strong>, which is the set of validators they trust for consensus participation.</p>
+      <ul>
+        <li>Validators propose transaction sets for the next ledger.</li>
+        <li>When 80% or more of the UNL agrees, the ledger is considered validated.</li>
+        <li>Protocol changes move through the <strong>amendments</strong> process, where validators vote over time.</li>
+      </ul>
+      <p>This architecture attempts to balance <strong>decentralization</strong>, <strong>performance</strong>, and <strong>security</strong> while avoiding proof-of-work mining.</p>
+
+      <h2>Where to continue</h2>
+      <ul>
+        <li>Read the <a href="/en/pages/guide.html">beginner's guide</a> if you still want the broader context.</li>
+        <li>Open the <a href="/en/articles/">English article hub</a> for translated editorial coverage.</li>
+        <li>Read the current highlight: <a href="/en/articles/2026-05-02.html">From Promised Infrastructure to Real Integration</a>.</li>
+        <li>Consult the official documentation at <a href="https://xrpl.org/" target="_blank" rel="noopener">xrpl.org</a> for protocol-level details and developer examples.</li>
+      </ul>
+
+      <section class="faq" id="faq">
+        <div>
+          <p class="kicker">FAQ</p>
+          <h2>Common questions</h2>
+          <p class="lead">Frequent questions about how XRPL actually works.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Is XRPL the same thing as Ripple?</h3>
+            <p>No. XRPL is the public network. Ripple is a company that builds products and contributes to the ecosystem.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Are the fees expensive?</h3>
+            <p>No. Fees on XRPL are typically very low and are paid in XRP.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Do I need XRP to use the network?</h3>
+            <p>Yes. Every account must hold a small XRP reserve in order to exist on the ledger.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="notice">
+        <p>This page intentionally simplifies a number of technical details. For full specifications and implementation examples, rely on the official documentation at <a href="https://xrpl.org/" target="_blank" rel="noopener">xrpl.org</a>.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL - Independent educational content. <a href="/en/terms.html">Terms</a> | <a href="/en/privacy.html">Privacy</a></p></footer>
+    <script src="/assets/script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is XRPL the same thing as Ripple?",
+            "acceptedAnswer": {"@type": "Answer", "text": "No. XRPL is the public network. Ripple is a company that builds products and contributes to the ecosystem."}
+          },
+          {
+            "@type": "Question",
+            "name": "Are the fees expensive?",
+            "acceptedAnswer": {"@type": "Answer", "text": "No. Fees on XRPL are typically very low and are paid in XRP."}
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need XRP to use the network?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every account must hold a small XRP reserve in order to exist on the ledger."}
+          }
+        ]
+      }
+    </script>
+  </body>
+</html>

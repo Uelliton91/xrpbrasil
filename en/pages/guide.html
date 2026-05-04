@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beginner's guide to XRP and XRPL | XRP BRASIL</title>
+    <meta
+      name="description"
+      content="Start from zero: what XRP is, how XRPL works, basic security, testnet practice, and where to go next."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="XRP BRASIL" />
+    <meta name="application-name" content="XRP BRASIL" />
+    <meta name="theme-color" content="#030712" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="keywords" content="XRP, XRPL, Ripple, XRP Ledger, beginner guide, first steps, security" />
+    <link rel="canonical" href="https://xrpbrasil.com.br/en/pages/guide.html" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/pages/guia.html" hreflang="pt-BR" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/en/pages/guide.html" hreflang="en" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/pages/guia.html" hreflang="x-default" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="XRP BRASIL" />
+    <meta property="og:title" content="Beginner's guide to XRP and XRPL | XRP BRASIL" />
+    <meta
+      property="og:description"
+      content="Start from zero: what XRP is, how XRPL works, basic security, testnet practice, and where to go next."
+    />
+    <meta property="og:url" content="https://xrpbrasil.com.br/en/pages/guide.html" />
+    <meta property="og:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Brasil_Xrp" />
+    <meta name="twitter:title" content="Beginner's guide to XRP and XRPL | XRP BRASIL" />
+    <meta
+      name="twitter:description"
+      content="Start from zero: what XRP is, how XRPL works, basic security, testnet practice, and where to go next."
+    />
+    <meta name="twitter:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTPCXTQRF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NHTPCXTQRF');
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/en/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <nav class="nav">
+        <a href="/en/pages/guide.html">Guide</a>
+        <a href="/en/pages/xrpl.html">XRPL</a>
+        <a href="/en/pages/xrpl-tracker.html">Tracker</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/ebook/">E-book</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/metrics/">Metrics</a>
+        <a href="/en/glossary/">Glossary</a>
+        <a href="/en/pages/about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Beginner's guide to XRP and XRPL</h1>
+      <p>This guide is for readers who want to understand <strong>XRP</strong> and the <strong>XRP Ledger (XRPL)</strong> with clarity, without quick-profit promises and without confusing jargon. The goal is to take you from zero to a <strong>practical understanding</strong> of the technology.</p>
+      <p>If you want the fastest route, start here and then continue with <a href="/en/pages/xrpl.html">How XRPL works</a> and the current <a href="/en/articles/2026-05-02.html">featured article</a>.</p>
+      <p>By the end of this page, you should understand:</p>
+      <ul class="icon-check">
+        <li>what XRP is and what it was designed to do;</li>
+        <li>how XRPL works underneath the surface;</li>
+        <li>how to study and test the network without buying anything first;</li>
+        <li>what the main security risks are and how to avoid them;</li>
+        <li>where to go next if you want a deeper understanding.</li>
+      </ul>
+
+      <h2 id="what-is-xrp">What is XRP?</h2>
+      <p><strong>XRP</strong> is a utility-focused digital asset used for settlement and value transfer inside XRPL. Unlike currencies created through mining, the entire supply of 100 billion XRP was defined at the genesis of the ledger.</p>
+      <p>In practice, XRP is used to:</p>
+      <ul>
+        <li>pay transaction fees on XRPL, always as a very small amount that gets burned;</li>
+        <li>act as a <strong>bridge asset</strong> between different currencies and issued assets;</li>
+        <li>maintain a <strong>base reserve</strong> in each account, which helps prevent spam and abuse;</li>
+        <li>serve as a liquidity asset in products that rely on XRPL for fast settlement.</li>
+      </ul>
+      <p>A meaningful share of supply remains in on-chain escrow with public rules, while the circulating supply is distributed across users, exchanges, and institutions.</p>
+
+      <h2>XRPL in one view</h2>
+      <p>XRPL is a public, permissionless payments network that closes a new ledger roughly every 3 to 5 seconds. It was built to be:</p>
+      <ul>
+        <li><strong>fast</strong>, with confirmations in seconds;</li>
+        <li><strong>low-cost</strong>, with tiny transaction fees;</li>
+        <li>feature-rich, with native <strong>DEX</strong>, <strong>AMM</strong>, <strong>escrow</strong>, and <strong>NFT</strong> support;</li>
+        <li>open enough for anyone to run infrastructure and participate in the ecosystem.</li>
+      </ul>
+      <p>For a more technical explanation, continue with <a href="/en/pages/xrpl.html">XRPL explained</a>.</p>
+
+      <h2>How to start safely</h2>
+      <p>A safe way to learn is by using the <strong>testnet</strong>, where you can receive test XRP from a faucet and explore the network without financial risk.</p>
+      <ol>
+        <li>Open the official faucet resources on <a href="https://xrpl.org/resources/dev-tools/xrp-faucets" target="_blank" rel="noopener">xrpl.org</a> and create a test account.</li>
+        <li>Copy the address and inspect it on <a href="https://xrpscan.com/" target="_blank" rel="noopener">XRPScan</a> to see balances and transactions.</li>
+        <li>Use the available developer tools to send a simple transaction, such as a payment to another test account.</li>
+        <li>If you write code, explore the official client libraries such as <a href="https://github.com/XRPLF/xrpl.js" target="_blank" rel="noopener">xrpl.js</a> or <a href="https://github.com/XRPLF/xrpl-py" target="_blank" rel="noopener">xrpl-py</a>.</li>
+      </ol>
+      <p>The point is not to memorize every concept immediately. It is to build intuition safely before touching real funds.</p>
+
+      <h2 id="security">Security first</h2>
+      <p>Before dealing with real value, it is essential to internalize a few principles:</p>
+      <ul class="icon-check">
+        <li><strong>Never</strong> share your seed phrase or private keys, including screenshots or photos.</li>
+        <li>Use two-factor authentication wherever it is available, especially on exchanges, wallets, and email accounts.</li>
+        <li>Always verify the domain name and browser extensions you use. Many scams imitate legitimate websites closely.</li>
+        <li>Be skeptical of miracle airdrops, giveaways that ask for funds upfront, or any promise of guaranteed returns.</li>
+        <li>This site is educational. We do not request deposits, collect funds, or send private messages asking for money.</li>
+      </ul>
+      <p>The most common mistakes in crypto are operational, not theoretical. Good security habits matter more than speed.</p>
+
+      <h2>Wallets and custody</h2>
+      <p>A <strong>wallet</strong> is the software or device that manages your private keys. On XRPL, the key controls the account. Whoever controls the key controls the balance.</p>
+      <ul>
+        <li><strong>Self-custody</strong>: you hold your own keys, such as on a hardware wallet or a non-custodial mobile wallet. More responsibility, more control.</li>
+        <li><strong>Third-party custody</strong>: a company holds the keys for you, such as an exchange or institutional custodian. More convenience, but it requires trust.</li>
+      </ul>
+      <p>A reasonable beginner path is:</p>
+      <ol>
+        <li>learn on the testnet with no real money;</li>
+        <li>study custody models carefully before making any move;</li>
+        <li>only then decide whether self-custody, a hardware wallet, or another setup makes sense for you.</li>
+      </ol>
+
+      <h2>Quick answers</h2>
+      <ul>
+        <li><strong>Do I need to buy XRP to learn?</strong> No. The testnet and educational resources should come first.</li>
+        <li><strong>Is this investment advice?</strong> No. The focus here is payments technology, infrastructure, and network design.</li>
+        <li><strong>Can I lose everything?</strong> Yes. Crypto assets involve price risk, technical risk, and operational risk. Never allocate what you cannot afford to lose.</li>
+      </ul>
+
+      <section class="faq" id="faq">
+        <div>
+          <p class="kicker">FAQ</p>
+          <h2>Common questions</h2>
+          <p class="lead">Fast answers for readers getting started.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Do I need to buy XRP to begin?</h3>
+            <p>No. Use the testnet and educational resources before thinking about any capital allocation.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What is the difference between XRP and XRPL?</h3>
+            <p>XRP is the digital asset. XRPL is the public network where that asset operates.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Where should I go next?</h3>
+            <p>Continue with the XRPL overview and then read the current featured article for context.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="notice">
+        <p>This guide is informational and does not replace your own research, legal advice, or financial advice. Use it as a structured starting point to study XRP and XRPL more responsibly.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL - Independent educational content. <a href="/en/terms.html">Terms</a> | <a href="/en/privacy.html">Privacy</a></p></footer>
+    <script src="/assets/script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need to buy XRP to begin?",
+            "acceptedAnswer": {"@type": "Answer", "text": "No. Use the testnet and educational resources before thinking about any capital allocation."}
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between XRP and XRPL?",
+            "acceptedAnswer": {"@type": "Answer", "text": "XRP is the digital asset. XRPL is the public network where that asset operates."}
+          },
+          {
+            "@type": "Question",
+            "name": "Where should I go next?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Continue with the XRPL overview and then read the current featured article for context."}
+          }
+        ]
+      }
+    </script>
+  </body>
+</html>

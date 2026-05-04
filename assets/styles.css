@@ -37,6 +37,9 @@ main.container{margin-inline:auto !important;width:100%}
 .header-actions button{border:0;background:transparent;color:var(--text);font-weight:600;cursor:pointer;border-radius:12px;padding:8px 12px;transition:background .15s ease,color .15s ease,transform .15s ease}
 .header-actions button:hover{background:rgba(0,230,255,.08)}
 .header-actions button:active{transform:translateY(1px)}
+.locale-switcher{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.04)}
+.locale-switcher__button{min-width:42px;padding:6px 10px !important;border-radius:999px !important;font-size:12px;letter-spacing:.06em}
+.locale-switcher__button.is-active{background:linear-gradient(90deg,var(--brand-green),var(--primary)) !important;color:#05141d !important}
 .search-trigger{display:flex;align-items:center;gap:6px}
 .search-trigger svg{width:16px;height:16px}
 .nav-toggle{display:none;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-weight:600;background:rgba(0,0,0,.25);color:var(--text);cursor:pointer}
@@ -154,6 +157,7 @@ section{margin:28px 0}
 .ebook-subtitle{margin:0;color:var(--muted);font-size:21px}
 .ebook-details{margin:0;max-width:620px}
 .ebook-details p{margin:0 0 32px}
+.ebook-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .ebook-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;margin:0;width:100%;max-width:520px;padding:12px 14px;background:rgba(5,10,16,.55);border:1px solid var(--border);border-radius:12px}
 .ebook-specs__item{display:flex;flex-direction:column;gap:4px}
 .ebook-specs__label{text-transform:uppercase;font-size:9px;letter-spacing:.08em;color:var(--muted)}
@@ -168,6 +172,7 @@ section{margin:28px 0}
   .ebook-info{gap:12px}
   .ebook-info{padding-top:0}
   .ebook-details{max-width:100%}
+  .ebook-actions{flex-direction:column;align-items:stretch}
   .ebook-specs{grid-template-columns:1fr}
   .ebook-subtitle{font-size:19px}
 }

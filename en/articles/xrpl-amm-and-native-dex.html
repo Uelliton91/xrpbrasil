@@ -1,0 +1,133 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XRPL AMM and native DEX | XRP BRASIL</title>
+    <meta name="description" content="Guide to XRPL&#39;s on-ledger DEX and native AMM: order books, pools, LP tokens, routing, and practical risks." />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="XRP BRASIL" />
+    <meta name="application-name" content="XRP BRASIL" />
+    <meta name="theme-color" content="#030712" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="keywords" content="xrpl, amm, dex, order book, liquidity, lp tokens" />
+    <link rel="canonical" href="https://xrpbrasil.com.br/en/articles/xrpl-amm-and-native-dex.html" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/artigos/amm-dex-xrpl.html" hreflang="pt-BR" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/en/articles/xrpl-amm-and-native-dex.html" hreflang="en" />
+    <link rel="alternate" href="https://xrpbrasil.com.br/artigos/amm-dex-xrpl.html" hreflang="x-default" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="XRP BRASIL" />
+    <meta property="og:title" content="XRPL AMM and native DEX | XRP BRASIL" />
+    <meta property="og:description" content="Guide to XRPL&#39;s on-ledger DEX and native AMM: order books, pools, LP tokens, routing, and practical risks." />
+    <meta property="og:url" content="https://xrpbrasil.com.br/en/articles/xrpl-amm-and-native-dex.html" />
+    <meta property="og:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Brasil_Xrp" />
+    <meta name="twitter:title" content="XRPL AMM and native DEX | XRP BRASIL" />
+    <meta name="twitter:description" content="Guide to XRPL&#39;s on-ledger DEX and native AMM: order books, pools, LP tokens, routing, and practical risks." />
+    <meta name="twitter:image" content="https://xrpbrasil.com.br/assets/logo.png" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHTPCXTQRF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NHTPCXTQRF');
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/en/"><img src="/assets/logo.png" alt="XRP BRASIL" height="26" onerror="this.onerror=null;this.src='/assets/logo.svg';"/> <span>XRP BRASIL</span></a>
+      <nav class="nav">
+        <a href="/en/pages/guide.html">Guide</a>
+        <a href="/en/pages/xrpl.html">XRPL</a>
+        <a href="/en/pages/xrpl-tracker.html">Tracker</a>
+        <a href="/en/articles/">Articles</a>
+        <a href="/en/ebook/">E-book</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/metrics/">Metrics</a>
+        <a href="/en/glossary/">Glossary</a>
+        <a href="/en/pages/about.html">About</a>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="notice">
+        <p><strong>Technical:</strong> This English page is a condensed translation of the Portuguese guide and focuses on the core technical ideas rather than every implementation detail.</p>
+      </section>
+
+      <h1>XRPL AMM and native DEX</h1>
+      <p class="lead">XRPL combines an on-ledger order-book exchange with a native AMM, giving the network a hybrid market structure that is unusual among public ledgers.</p>
+
+      <h2>What this page covers</h2>
+      <ul>
+        <li>How the order-book DEX works inside the ledger itself.</li>
+        <li>What auto-bridging with XRP changes for execution and routing.</li>
+        <li>Which AMM and liquidity risks still matter in practice.</li>
+      </ul>
+
+      <h2>Overview</h2>
+      <p>The original article explains that XRPL&#39;s DEX is not an external application layer. Order books live inside the ledger, so wallets and applications can interact with the same market structure directly from the protocol.</p>
+      <p>It also highlights why the native AMM matters: pools, LP tokens, and swap routing can operate alongside traditional order books, which allows liquidity to be sourced from more than one mechanism at once.</p>
+
+      <h2>Why it matters</h2>
+      <p>That matters because XRPL&#39;s value proposition is not only about fast payments. It also includes native market access and asset exchange without depending on a stack of separate smart contracts for basic functionality.</p>
+      <p>For readers evaluating XRPL seriously, the practical question is not whether an AMM exists, but how native integration changes slippage, routing, capital efficiency, and user experience.</p>
+
+      <h2>Practical takeaway</h2>
+      <p>If you want to understand XRPL as infrastructure, study how value is routed through order books, pools, and XRP bridge liquidity. That is one of the ledger&#39;s most distinctive design choices.</p>
+
+      <section class="related">
+        <h2>Read next</h2>
+        <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <a class="card" href="/en/pages/guide.html">
+            <h3>Start with the guide</h3>
+            <p>Build context on XRP, XRPL, safety, and the right study path before going deeper.</p>
+          </a>
+          <a class="card" href="/en/pages/xrpl.html">
+            <h3>Understand the ledger</h3>
+            <p>Review consensus, DEX, AMM, trustlines, and validators in one technical overview.</p>
+          </a>
+          <a class="card" href="/en/articles/2026-05-02.html">
+            <h3>Read the current highlight</h3>
+            <p>See how regulation, RLUSD, DTCC/NSCC, SWIFT, ETFs, and tokenization connect today.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="notice">
+        <p>Educational content only. Review official XRPL documentation before using AMMs or DEX tools with meaningful capital.</p>
+      </section>
+      <p class="article-date">Published in Q4 2025</p>
+    </main>
+    <footer class="site-footer"><p>&copy; <span id="year"></span> XRP BRASIL - Independent educational content. <a href="/en/terms.html">Terms</a> | <a href="/en/privacy.html">Privacy</a></p></footer>
+    <script src="/assets/script.js"></script>
+    <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@type":  "BlogPosting",
+    "headline":  "XRPL AMM and native DEX",
+    "description":  "Guide to XRPL\u0027s on-ledger DEX and native AMM: order books, pools, LP tokens, routing, and practical risks.",
+    "inLanguage":  "en",
+    "mainEntityOfPage":  {
+                             "@type":  "WebPage",
+                             "@id":  "https://xrpbrasil.com.br/en/articles/xrpl-amm-and-native-dex.html"
+                         },
+    "author":  {
+                   "name":  "XRP BRASIL",
+                   "@type":  "Organization"
+               },
+    "publisher":  {
+                      "name":  "XRP BRASIL",
+                      "logo":  {
+                                   "@type":  "ImageObject",
+                                   "url":  "https://xrpbrasil.com.br/assets/logo.png"
+                               },
+                      "@type":  "Organization"
+                  },
+    "url":  "https://xrpbrasil.com.br/en/articles/xrpl-amm-and-native-dex.html"
+}
+    </script>
+  </body>
+</html>

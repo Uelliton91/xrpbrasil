@@ -1,0 +1,583 @@
+﻿[
+    {
+        "url":  "/en/",
+        "title":  "XRP BRASIL in English",
+        "description":  "English home page with translated guides, articles, tools, glossary, tracker pages, and practical context.",
+        "keywords":  [
+                         "xrp",
+                         "xrpl",
+                         "english",
+                         "home"
+                     ],
+        "category":  "Home"
+    },
+    {
+        "url":  "/en/pages/guide.html",
+        "title":  "Beginner\u0027s guide to XRP and XRPL",
+        "description":  "Start from zero with XRP, XRPL, safety, testnet practice, and the right study path.",
+        "keywords":  [
+                         "guide",
+                         "beginner",
+                         "security",
+                         "xrp",
+                         "xrpl"
+                     ],
+        "category":  "Guides"
+    },
+    {
+        "url":  "/en/pages/xrpl.html",
+        "title":  "XRPL explained",
+        "description":  "Accounts, consensus, DEX, AMM, issued assets, trustlines, and validators.",
+        "keywords":  [
+                         "xrpl",
+                         "consensus",
+                         "amm",
+                         "dex",
+                         "validators"
+                     ],
+        "category":  "Guides"
+    },
+    {
+        "url":  "/en/pages/about.html",
+        "title":  "About XRP BRASIL",
+        "description":  "Mission, editorial principles, and the educational focus of the project.",
+        "keywords":  [
+                         "about",
+                         "mission",
+                         "editorial",
+                         "xrp brasil"
+                     ],
+        "category":  "About"
+    },
+    {
+        "url":  "/en/pages/what-is-xrp.html",
+        "title":  "What is XRP?",
+        "description":  "Quick explanation of XRP, its role on XRPL, and basic safety points for new readers.",
+        "keywords":  [
+                         "xrp",
+                         "what is xrp",
+                         "basics",
+                         "payments"
+                     ],
+        "category":  "Guides"
+    },
+    {
+        "url":  "/en/pages/what-is-xrpl.html",
+        "title":  "What is XRPL?",
+        "description":  "Quick explanation of the XRP Ledger, native features, and practical use cases.",
+        "keywords":  [
+                         "xrpl",
+                         "what is xrpl",
+                         "consensus",
+                         "amm",
+                         "dex"
+                     ],
+        "category":  "Guides"
+    },
+    {
+        "url":  "/en/pages/xrpl-step-by-step.html",
+        "title":  "XRPL step by step",
+        "description":  "Create a testnet account, inspect it on XRPScan, and send your first transaction.",
+        "keywords":  [
+                         "testnet",
+                         "xrpscan",
+                         "first transaction",
+                         "xrpl tutorial"
+                     ],
+        "category":  "Guides"
+    },
+    {
+        "url":  "/en/pages/xrpl-tracker.html",
+        "title":  "XRPL activity tracker",
+        "description":  "Real-time dashboard for DEX activity, liquidity rhythm, and exchange balances.",
+        "keywords":  [
+                         "tracker",
+                         "dex",
+                         "liquidity",
+                         "activity",
+                         "exchange balances"
+                     ],
+        "category":  "Metrics"
+    },
+    {
+        "url":  "/en/articles/",
+        "title":  "English articles hub",
+        "description":  "English article hub covering current features, archive translations, infrastructure analysis, and safety guides.",
+        "keywords":  [
+                         "articles",
+                         "english",
+                         "archive",
+                         "xrp",
+                         "xrpl"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/archive/",
+        "title":  "Weekly archive in English",
+        "description":  "English archive of weekly XRP and XRPL updates from XRP BRASIL.",
+        "keywords":  [
+                         "weekly archive",
+                         "english updates",
+                         "xrp",
+                         "xrpl"
+                     ],
+        "category":  "Archive"
+    },
+    {
+        "url":  "/en/articles/2026-05-02.html",
+        "title":  "XRP Ledger: From Promised Infrastructure to Real Integration",
+        "description":  "RLUSD, DTCC/NSCC, SWIFT, ETFs, tokenization, privacy, and convergence between February and April 2026.",
+        "keywords":  [
+                         "rlusd",
+                         "dtcc",
+                         "swift",
+                         "etf",
+                         "tokenization",
+                         "xrp",
+                         "xrpl"
+                     ],
+        "category":  "Updates"
+    },
+    {
+        "url":  "/en/glossary/",
+        "title":  "English glossary",
+        "description":  "Essential definitions for XRP, XRPL, trustlines, validators, and more.",
+        "keywords":  [
+                         "glossary",
+                         "trustline",
+                         "validator",
+                         "amm",
+                         "dex"
+                     ],
+        "category":  "Glossary"
+    },
+    {
+        "url":  "/en/tools/",
+        "title":  "XRP/XRPL tools",
+        "description":  "Curated list of explorers, wallets, documentation, and developer resources.",
+        "keywords":  [
+                         "tools",
+                         "explorer",
+                         "wallet",
+                         "documentation",
+                         "faucet"
+                     ],
+        "category":  "Tools"
+    },
+    {
+        "url":  "/en/metrics/",
+        "title":  "XRPL metrics",
+        "description":  "Educational dashboard with price, volume, and on-chain activity indicators.",
+        "keywords":  [
+                         "metrics",
+                         "price",
+                         "volume",
+                         "accounts",
+                         "on-chain"
+                     ],
+        "category":  "Metrics"
+    },
+    {
+        "url":  "/en/newsletter/",
+        "title":  "XRP BRASIL newsletter",
+        "description":  "Weekly summary of guides, articles, and ecosystem developments.",
+        "keywords":  [
+                         "newsletter",
+                         "weekly summary",
+                         "updates",
+                         "xrpl"
+                     ],
+        "category":  "Newsletter"
+    },
+    {
+        "url":  "/en/ebook/",
+        "title":  "Technical e-book",
+        "description":  "Technical e-book about settlement infrastructure, interoperability, and value transfer on XRPL.",
+        "keywords":  [
+                         "ebook",
+                         "settlement",
+                         "interoperability",
+                         "xrpl",
+                         "infrastructure"
+                     ],
+        "category":  "E-book"
+    },
+    {
+        "url":  "/en/articles/2025-institutional-xrp-infrastructure.html",
+        "title":  "2025: XRP infrastructure at institutional scale",
+        "description":  "XRP ETFs, RLUSD, and tokenization show how 2025 strengthened the institutional infrastructure around XRP and XRPL.",
+        "keywords":  [
+                         "xrp",
+                         "xrpl",
+                         "institutional infrastructure",
+                         "rlusd",
+                         "tokenization",
+                         "etfs"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrpl-amm-and-native-dex.html",
+        "title":  "XRPL AMM and native DEX",
+        "description":  "Guide to XRPL\u0027s on-ledger DEX and native AMM: order books, pools, LP tokens, routing, and practical risks.",
+        "keywords":  [
+                         "xrpl",
+                         "amm",
+                         "dex",
+                         "order book",
+                         "liquidity",
+                         "lp tokens"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/ripple-acquisitions-and-xrp-xrpl.html",
+        "title":  "Ripple acquisitions and their impact on XRP and XRPL",
+        "description":  "Key Ripple acquisitions and investments, and how they may strengthen XRP and XRPL across custody, payments, and tokenization.",
+        "keywords":  [
+                         "ripple",
+                         "acquisitions",
+                         "xrpl",
+                         "xrp",
+                         "custody",
+                         "tokenization"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/weekly-updates-rlusd-xrpl-xrp-etfs.html",
+        "title":  "Weekly updates: RLUSD, XRPL, and XRP ETFs",
+        "description":  "Weekly summary covering RLUSD, XRPL developments, and XRP ETF data, including assets under management and circulating-supply context.",
+        "keywords":  [
+                         "rlusd",
+                         "xrpl",
+                         "xrp etfs",
+                         "weekly update",
+                         "aum",
+                         "market structure"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrp-wallets-custody-and-security.html",
+        "title":  "XRP wallets: custody and security",
+        "description":  "Self-custody versus third-party custody, wallet types, seed phrases, multisigning, and security practices for XRP users.",
+        "keywords":  [
+                         "xrp wallet",
+                         "custody",
+                         "seed phrase",
+                         "multisigning",
+                         "security",
+                         "xrpl"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrpl-real-world-use-cases.html",
+        "title":  "XRPL in the real world: use cases beyond speculation",
+        "description":  "Payments, remittances, stablecoins, utility NFTs, and institutional projects that use XRPL in practice.",
+        "keywords":  [
+                         "xrpl use cases",
+                         "payments",
+                         "remittances",
+                         "stablecoins",
+                         "tokenization",
+                         "nfts"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrp-etfs-and-institutional-capital.html",
+        "title":  "XRP ETFs and institutional capital",
+        "description":  "Overview of XRP-linked ETFs, ETPs, and ETNs, how to verify official products, and what they may change in market liquidity.",
+        "keywords":  [
+                         "xrp etf",
+                         "institutional capital",
+                         "etp",
+                         "etn",
+                         "liquidity",
+                         "market"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/history-of-xrp-and-xrpl.html",
+        "title":  "History of XRP and XRPL since 2012",
+        "description":  "Timeline of XRP and XRPL: origins, founders, early design choices, and major milestones since 2012.",
+        "keywords":  [
+                         "xrp history",
+                         "xrpl history",
+                         "founders",
+                         "timeline",
+                         "settlement",
+                         "2012"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/practical-introduction-to-xrpl.html",
+        "title":  "Practical introduction to XRPL",
+        "description":  "Create a testnet account, inspect it on XRPScan, and send your first XRPL transaction step by step.",
+        "keywords":  [
+                         "xrpl tutorial",
+                         "testnet",
+                         "xrpscan",
+                         "first transaction",
+                         "beginner",
+                         "guide"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/iso-20022-and-xrpl.html",
+        "title":  "ISO 20022 and the role of XRPL in payments",
+        "description":  "Understand the ISO 20022 messaging standard, why banks are migrating, and how XRP and XRPL fit into modern payment infrastructure.",
+        "keywords":  [
+                         "iso 20022",
+                         "xrpl",
+                         "payments",
+                         "financial messaging",
+                         "interoperability",
+                         "xrp"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/ripple-public-partnerships-payments.html",
+        "title":  "Ripple public partnerships: clients and payments",
+        "description":  "Overview of publicly announced Ripple partnerships with a focus on cross-border payments, liquidity, and real operational use.",
+        "keywords":  [
+                         "ripple partnerships",
+                         "payments",
+                         "xrp",
+                         "liquidity",
+                         "adoption",
+                         "clients"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/ripple-partnerships-with-xrp-and-xrpl-potential.html",
+        "title":  "Ripple public partnerships with potential XRP and XRPL use",
+        "description":  "Survey of public partnerships and how they may connect to XRP and XRPL usage, with sources and caution around direct attribution.",
+        "keywords":  [
+                         "ripple partnerships",
+                         "xrpl",
+                         "xrp",
+                         "sources",
+                         "adoption",
+                         "institutional"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/brazilian-projects-in-the-xrpl-ecosystem.html",
+        "title":  "Brazilian projects in the XRPL ecosystem",
+        "description":  "An evolving directory of Brazilian projects connected to XRPL or XRP, with official links for verification.",
+        "keywords":  [
+                         "brazil",
+                         "xrpl ecosystem",
+                         "projects",
+                         "xrp brasil",
+                         "directory",
+                         "community"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/ripple-xrp-xrpl-differences.html",
+        "title":  "Ripple vs XRP vs XRPL: what is the difference?",
+        "description":  "Clear explanation of the difference between Ripple the company, XRP the asset, and XRPL the network, with examples and correct terminology.",
+        "keywords":  [
+                         "ripple",
+                         "xrp",
+                         "xrpl",
+                         "differences",
+                         "terminology",
+                         "company vs network"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/sec-vs-ripple-xrp.html",
+        "title":  "SEC vs Ripple: what was decided about XRP in the US?",
+        "description":  "Didactic summary of the SEC vs Ripple case, including programmatic and institutional sales and the effect on secondary-market interpretation.",
+        "keywords":  [
+                         "sec ripple case",
+                         "xrp legal",
+                         "programmatic sales",
+                         "institutional sales",
+                         "us regulation",
+                         "xrp"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrp-xrpl-security-guide.html",
+        "title":  "Maximum security with XRP and XRPL",
+        "description":  "Full security guide covering common scams, custody mistakes, operational checklists, and best practices for XRP and XRPL.",
+        "keywords":  [
+                         "xrp security",
+                         "xrpl security",
+                         "scams",
+                         "custody",
+                         "seed phrase",
+                         "checklist"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/week-in-focus-xrp-xrpl-etfs-iso20022.html",
+        "title":  "Week in focus: XRP, XRPL, ETFs, and ISO 20022",
+        "description":  "Weekly overview of XRP and XRPL covering ETF developments, technical progress, and the global migration toward ISO 20022.",
+        "keywords":  [
+                         "weekly xrp",
+                         "xrpl",
+                         "etfs",
+                         "iso 20022",
+                         "market structure",
+                         "infrastructure"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/stablecoins-on-xrpl.html",
+        "title":  "Stablecoins on XRPL: how they work",
+        "description":  "IOUs, trustlines, examples such as RLUSD and other issued assets, plus the risks of issuer verification on XRPL.",
+        "keywords":  [
+                         "stablecoins",
+                         "xrpl",
+                         "trustlines",
+                         "issued assets",
+                         "rlusd",
+                         "issuer risk"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrp-at-the-center-of-the-institutional-shift.html",
+        "title":  "XRP at the center of the institutional shift",
+        "description":  "ETFs, real-world assets, and banking infrastructure help explain why XRP and XRPL keep appearing in the institutional cycle.",
+        "keywords":  [
+                         "xrp institutional",
+                         "rwa",
+                         "banking",
+                         "etfs",
+                         "infrastructure",
+                         "xrpl"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrp-infrastructure-in-the-spotlight.html",
+        "title":  "XRP: the week infrastructure stopped being backstage",
+        "description":  "Weekly infrastructure panorama covering RLUSD, real XRPL usage, ETF supply absorption, and regulatory signals.",
+        "keywords":  [
+                         "xrp weekly",
+                         "infrastructure",
+                         "rlusd",
+                         "etfs",
+                         "xrpl use",
+                         "regulation"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrp-in-the-new-global-financial-infrastructure.html",
+        "title":  "XRP in the new global financial infrastructure",
+        "description":  "ETFs, tokenization, and regulation show how XRP and XRPL connect to the new financial infrastructure taking shape globally.",
+        "keywords":  [
+                         "xrp infrastructure",
+                         "xrpl",
+                         "tokenization",
+                         "regulation",
+                         "etfs",
+                         "global finance"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/xrp-xrpl-vs-btc-and-eth.html",
+        "title":  "XRP and XRPL vs Bitcoin and Ethereum",
+        "description":  "Direct comparison of purpose, consensus, finality, fees, programmability, and common use cases across XRP, Bitcoin, and Ethereum.",
+        "keywords":  [
+                         "xrp vs btc",
+                         "xrp vs eth",
+                         "xrpl comparison",
+                         "consensus",
+                         "fees",
+                         "finality"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/how-ripple-xrp-and-xrpl-connect.html",
+        "title":  "How XRP, XRPL, and Ripple connect",
+        "description":  "How Ripple contributes to and uses XRP and XRPL across products, governance conversations, escrow structure, and executive influence.",
+        "keywords":  [
+                         "ripple",
+                         "xrp",
+                         "xrpl",
+                         "escrow",
+                         "governance",
+                         "company relationship"
+                     ],
+        "category":  "Articles"
+    },
+    {
+        "url":  "/en/articles/archive/2025-11-13.html",
+        "title":  "A new milestone: the first XRP spot ETF in the US",
+        "description":  "Archived weekly update on the XRPC launch: debut volume, fee structure, custody, and comparison with other crypto ETFs.",
+        "keywords":  [
+                         "xrp spot etf",
+                         "xrpc",
+                         "archive",
+                         "institutional access",
+                         "xrp weekly"
+                     ],
+        "category":  "Archive"
+    },
+    {
+        "url":  "/en/articles/archive/2026-01-10.html",
+        "title":  "Infrastructure before price: why XRP sits near the new global financial architecture",
+        "description":  "Archived weekly update covering ISO 20022, SWIFT, CBDCs, and tokenization as parts of a new financial architecture.",
+        "keywords":  [
+                         "infrastructure before price",
+                         "xrp",
+                         "iso 20022",
+                         "swift",
+                         "cbdc",
+                         "tokenization"
+                     ],
+        "category":  "Archive"
+    },
+    {
+        "url":  "/en/articles/archive/2026-01-26.html",
+        "title":  "From crypto narrative to financial infrastructure: the global pattern taking shape",
+        "description":  "Archived weekly update on ISO 20022, 24-7 settlement, regulated stablecoins, and the emerging role of XRP and XRPL.",
+        "keywords":  [
+                         "financial infrastructure",
+                         "archive",
+                         "stablecoins",
+                         "24-7 settlement",
+                         "xrpl",
+                         "xrp"
+                     ],
+        "category":  "Archive"
+    },
+    {
+        "url":  "/en/articles/archive/2026-02-14.html",
+        "title":  "The XRP Ledger is leaving the crypto world and entering the financial system",
+        "description":  "Archived weekly update on regulation, RLUSD, tokenization, and interoperability as XRPL moved from crypto narrative to financial infrastructure.",
+        "keywords":  [
+                         "xrpl financial system",
+                         "archive",
+                         "rlusd",
+                         "tokenization",
+                         "interoperability",
+                         "xrp"
+                     ],
+        "category":  "Archive"
+    }
+]
